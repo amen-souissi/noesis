@@ -1,0 +1,56 @@
+{
+  "app": {
+    "name": "Noesis",
+    "tagline": "Learn about LLMs",
+    "footer": "NumPy-only Transformer — from scratch"
+  },
+  "nav": {
+    "progression": "Progress",
+    "logout": "Log out"
+  },
+  "actions": {
+    "start": "Get started",
+    "startNow": "Get started now",
+    "next": "Next",
+    "previous": "Previous",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "close": "Close",
+    "reset": "Reset",
+    "loading": "Loading…",
+    "retry": "Retry",
+    "send": "Send",
+    "copy": "Copy",
+    "download": "Download",
+    "upload": "Upload",
+    "initialize": "Initialize",
+    "train": "Train",
+    "stop": "Stop",
+    "pause": "Pause",
+    "resume": "Resume",
+    "apply": "Apply",
+    "explore": "Explore"
+  },
+  "status": {
+    "inactive": "Inactive",
+    "ready": "Ready",
+    "training": "Training",
+    "paused": "Paused",
+    "completed": "Completed",
+    "failed": "Failed",
+    "stopped": "Stopped",
+    "active": "Active"
+  },
+  "errors": {
+    "generic": "An error occurred",
+    "network": "Network error",
+    "notFound": "Not found",
+    "stateChange": "Error while changing state"
+  },
+  "language": {
+    "label": "Language",
+    "fr": "Français",
+    "en": "English"
+  }
+}

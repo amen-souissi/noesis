@@ -1,0 +1,36 @@
+[project]
+name = "minillm"
+version = "0.1.0"
+description = "A mini LLM built from scratch for educational purposes"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "tiktoken>=0.5",
+]
+
+[project.optional-dependencies]
+viz = ["matplotlib>=3.7"]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+minillm = "main:main"
+
+[tool.setuptools.packages.find]
+include = ["modules*", "autograd*", "optim*", "training*", "generation*"]
+exclude = ["backend*", "frontend*", "node_modules*", "data*", "media*", "saved_models*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "modules", "generation"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+exclude = ["__pycache__", ".git", "node_modules", "venv", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501", "E402", "N806", "N802", "E741"]

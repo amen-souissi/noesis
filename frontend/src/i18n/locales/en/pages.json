@@ -1,0 +1,2706 @@
+{
+  "landing": {
+    "badge": "Open source educational application",
+    "heroTitle": "Understand how LLMs",
+    "heroTitle2": "work",
+    "heroAnimated": ", from the inside",
+    "heroDescription": "Noesis is an interactive educational application that lets you build, train, and query your own language model — entirely from scratch.",
+    "startButton": "Get started",
+    "startButtonWithArrow": "Get started",
+    "features": {
+      "sectionTitle": "What you'll learn",
+      "sectionSubtitle": "A complete course to understand every component of an LLM",
+      "training": {
+        "title": "Training",
+        "description": "Tokenization, embeddings, attention, feed-forward, backpropagation — follow every step that transforms raw data into a model capable of predicting."
+      },
+      "generation": {
+        "title": "Generation",
+        "description": "Softmax, temperature, sampling — discover how the model chooses the next token and builds a response word by word."
+      },
+      "playground": {
+        "title": "Playground",
+        "description": "Train your own model on your data, adjust the parameters, and chat with it in real time."
+      }
+    },
+    "scratch": {
+      "sectionTitle": "Built",
+      "sectionTitleHighlight": "from scratch",
+      "sectionSubtitle": "No ML framework — just NumPy and transparency",
+      "point1": {
+        "title": "No PyTorch, no TensorFlow",
+        "description": "The engine is built entirely with NumPy. No black boxes."
+      },
+      "point2": {
+        "title": "Every computation is visible and explained",
+        "description": "Matrices, gradients, softmax — everything is broken down step by step."
+      },
+      "point3": {
+        "title": "A real decoder-only Transformer",
+        "description": "The same architecture as GPT, implemented from scratch."
+      }
+    },
+    "cta": {
+      "title": "Ready to understand LLMs?",
+      "subtitle": "Start the course right now.",
+      "button": "Get started now"
+    },
+    "footer": {
+      "tagline": "NumPy-only Transformer — from scratch"
+    }
+  },
+  "introduction": {
+    "badge": "Learn by doing",
+    "title": "What is an LLM?",
+    "subtitle": "Discover how a machine learns to write text, step by step, with a real model you can train and query.",
+    "italic": "On the surface, it predicts the next word. In reality, its weights encode a massive program — capable of manipulating words it has never seen.",
+    "analogies": {
+      "learnsByExample": {
+        "title": "It learns by example",
+        "description": "An LLM reads enormous amounts of text and learns to recognize patterns: which words follow which others, how sentences are constructed."
+      },
+      "predictsNextWord": {
+        "title": "It predicts the next word",
+        "description": "Its only skill: guessing the next token. \"The ca...\" → it predicts \"t\" because it has seen this pattern."
+      },
+      "doesNotUnderstand": {
+        "title": "It doesn't truly understand",
+        "description": "An LLM manipulates statistics, not meaning. It is very good at imitating language, but it has no consciousness or real understanding."
+      }
+    },
+    "exampleContext": "We will use this sentence throughout the course to concretely show what happens at each processing step.",
+    "architecture": {
+      "title": "Model architecture",
+      "description": "Click on a block to explore the corresponding step in detail."
+    },
+    "phases": {
+      "training": {
+        "title": "Phase 1: Training",
+        "description": "How the model learns from text: tokenization, embedding, attention, error computation, and weight updates.",
+        "link": "Get started"
+      },
+      "generation": {
+        "title": "Phase 2: Generation",
+        "description": "How the model produces text: passing through the network, softmax, sampling, and autoregressive loop.",
+        "link": "Explore"
+      }
+    },
+    "note": {
+      "title": "Our mini-LLM in brief",
+      "description": "This model is a decoder-only Transformer (like GPT), built entirely in NumPy — without frameworks like PyTorch or TensorFlow. It uses a character-by-character tokenizer, which makes it simpler to understand but less performant than a real LLM."
+    }
+  },
+  "login": {
+    "subtitle": "Log in to your account",
+    "usernameLabel": "Username",
+    "passwordLabel": "Password",
+    "submitButton": "Log in",
+    "errors": {
+      "invalidCredentials": "Incorrect username or password.",
+      "generic": "An error occurred. Please try again."
+    },
+    "noAccount": "Don't have an account yet?",
+    "createAccount": "Create an account",
+    "backToHome": "Back to home"
+  },
+  "register": {
+    "subtitle": "Create your account to get started",
+    "usernameLabel": "Username",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm password",
+    "submitButton": "Create my account",
+    "errors": {
+      "passwordMismatch": "Passwords do not match.",
+      "passwordTooShort": "Password must be at least 8 characters.",
+      "generic": "An error occurred. Please try again."
+    },
+    "hasAccount": "Already have an account?",
+    "loginLink": "Log in",
+    "backToHome": "Back to home"
+  },
+  "playground": {
+    "defaultTitle": "Playground",
+    "backButton": "My instances",
+    "tabs": {
+      "config": {
+        "label": "Configure",
+        "description": "Define the architecture and hyperparameters"
+      },
+      "data": {
+        "label": "Data",
+        "description": "Load the training text"
+      },
+      "train": {
+        "label": "Train",
+        "description": "Launch training and track progress"
+      },
+      "chat": {
+        "label": "Chat",
+        "description": "Test the model in conversation"
+      }
+    },
+    "status": {
+      "idle": "Not initialized",
+      "ready": "Ready",
+      "training": "Training",
+      "paused": "Paused",
+      "default": "Inactive"
+    },
+    "ws": {
+      "connected": "Connected",
+      "disconnected": "Disconnected"
+    },
+    "actions": {
+      "initialize": "Initialize",
+      "initializing": "Initializing...",
+      "reinitialize": "Re-initialize",
+      "reinitializeTooltip": "Destroys the current model and creates a new one (random weights)",
+      "delete": "Delete",
+      "deleteTooltip": "Delete this instance"
+    },
+    "errors": {
+      "initFailed": "Error during initialization",
+      "reinitFailed": "Error during re-initialization",
+      "deleteFailed": "Error during deletion"
+    }
+  },
+  "docs": {
+    "title": "Documentation Hub",
+    "subtitle": "Explore how Noesis works -- from tokenization to text generation",
+    "dataFlow": {
+      "title": "Data Flow",
+      "description": "How data flows through the transformer architecture"
+    },
+    "sections": {
+      "purpose": "Purpose",
+      "classInterface": "Class Interface",
+      "constructor": "Constructor",
+      "constructorHeaders": {
+        "parameter": "Parameter",
+        "type": "Type",
+        "description": "Description",
+        "default": "default"
+      },
+      "methods": "Methods",
+      "properties": "Properties",
+      "propertiesHeaders": {
+        "name": "Name",
+        "type": "Type",
+        "description": "Description"
+      },
+      "mathFormulas": "Math Formulas",
+      "keyShapes": "Key Shapes",
+      "keyShapesHeaders": {
+        "tensor": "Tensor",
+        "shape": "Shape"
+      },
+      "codeExample": "Code Example",
+      "dataFlowSection": "Data Flow",
+      "receivesFrom": "Receives from",
+      "sendsTo": "Sends to",
+      "goToModule": "Go to module",
+      "educationalNotes": "Educational Notes",
+      "relatedLessons": {
+        "title": "Related Lessons",
+        "description": "This module is covered in the following lessons of the educational course:",
+        "trainingPhase": "Training",
+        "generationPhase": "Generation"
+      }
+    },
+    "navigation": {
+      "documentation": "Documentation",
+      "previous": "Previous",
+      "next": "Next",
+      "backToDocumentation": "Back to Documentation"
+    },
+    "errors": {
+      "loadFailed": "Failed to load module details.",
+      "notFound": "Module not found"
+    }
+  },
+  "moduleDetail": {
+    "breadcrumb": "Documentation",
+    "purpose": "Purpose",
+    "classInterface": "Class Interface",
+    "constructor": "Constructor",
+    "methods": "Methods",
+    "properties": "Properties",
+    "mathFormulas": "Math Formulas",
+    "keyShapes": "Key Shapes",
+    "codeExample": "Code Example",
+    "dataFlow": "Data Flow",
+    "receivesFrom": "Receives from",
+    "sendsTo": "Sends to",
+    "goToModule": "Go to module",
+    "educationalNotes": "Educational Notes",
+    "relatedLessons": "Related Lessons",
+    "relatedLessonsDescription": "This module is covered in the following lessons of the educational course:",
+    "trainingPhase": "Training",
+    "generationPhase": "Generation",
+    "previous": "Previous",
+    "next": "Next",
+    "backToDocumentation": "Back to Documentation",
+    "errors": {
+      "loadFailed": "Failed to load module details.",
+      "notFound": "Module not found"
+    },
+    "headers": {
+      "parameter": "Parameter",
+      "type": "Type",
+      "description": "Description",
+      "default": "default",
+      "name": "Name",
+      "tensor": "Tensor",
+      "shape": "Shape"
+    }
+  },
+  "beyond": {
+    "badge": "Going further",
+    "title": "Beyond",
+    "titleHighlight": "statistics",
+    "subtitle": "You've seen every step of the pipeline — tokenization, training, generation. It's time to step back and ask the question that changes everything.",
+    "italic": "What you'll discover here is one of the most fascinating ideas in modern artificial intelligence.",
+    "unknownWords": {
+      "sectionTitle": "The paradox of unknown words",
+      "experiment": {
+        "title": "The puzzling experiment",
+        "description1": "Ask ChatGPT: \"Is the glorbifex dangerous?\" — it understands that \"glorbifex\" is the name of an object or creature, and it crafts a coherent response around this word. Yet \"glorbifex\" has never existed in any training data.",
+        "description2": "Even more striking: type your own last name — a name the model has probably never seen — and it will use it correctly as a subject in its sentences, conjugate verbs with it, and refer back to it in its responses.",
+        "twoModelsLabel": "Two models, two reactions:",
+        "gptTitle": "GPT-4 / Claude (100B+ parameters)",
+        "gptPrompt": "\"Who is Kervadalec?\"",
+        "gptResponse": "→ \"I don't have information about Kervadalec. Is this a person, a place...?\"",
+        "gptNote": "Understands the grammatical role, asks for clarification",
+        "miniTitle": "Our model (~50k parameters)",
+        "miniPrompt": "\"Kervadalec\"",
+        "miniResponse": "→ \"Kervadalec ent les dé controu...\"",
+        "miniNote": "Continues blindly: good texture, no understanding",
+        "conclusion": "Both models handle the unknown word. But one understands its function in the sentence, the other simply chains likely characters. Why this difference?"
+      },
+      "tokenization": {
+        "title": "First key: tokenization doesn't work with words",
+        "description": "The model never sees \"Kervadalec\" as a single word. It sees it as a sequence of pieces — and each piece is known:",
+        "charLevel": {
+          "title": "Char-level (our model)",
+          "description": "Each letter is a token. As long as the letters are in the vocabulary, the word passes — but the model doesn't know it's a proper noun."
+        },
+        "bpe": {
+          "title": "BPE (GPT-4 / Claude)",
+          "description": "Split into known subwords. The vocabulary includes the 256 base bytes: nothing is ever unknown."
+        },
+        "wordLevel": {
+          "title": "Whole word (legacy)",
+          "description": "Word not in vocabulary → generic token. \"pizza\" and \"sushi\" become the same <UNK>: we lose everything."
+        }
+      },
+      "attention": {
+        "title": "Second key: probabilities depend on the entire context",
+        "description": "Probabilities are not fixed — they are recomputed at each token based on the entire context. The attention mechanism examines every token, including those from the user's prompt.",
+        "probLow": "~0.001%",
+        "probLowNote": "-- nearly impossible",
+        "probHigh": "~90%",
+        "probHighNote": "-- nearly certain",
+        "probGeneral": "in general",
+        "probContext": "knowing that \"Kervadalec\" is in the context",
+        "conclusion": "Attention \"points\" to the prompt tokens and copies them at the right time. It's a dynamic copying mechanism, not recitation."
+      },
+      "structure": {
+        "title": "Third key: the model understands structure, not just words",
+        "description1": "A large LLM doesn't store word-to-word associations. It learns abstract grammatical roles: \"subject\", \"verb\", \"complement\". When it sees an unknown word in the position of a subject, it treats it as a subject -- even if it has never encountered it.",
+        "description2": "That's why \"Kervadalec is a good cook\" produces a coherent continuation: the model identified \"Kervadalec\" as a subject, \"is\" as a verb, and the rest follows the subject-verb-attribute pattern it learned from millions of sentences.",
+        "description3": "Our mini-LLM, with only ~50k parameters, doesn't have enough capacity to develop these abstractions. It recognizes local patterns (which letters follow which), but not overall grammatical structure."
+      }
+    },
+    "programs": {
+      "sectionTitle": "The hidden programs in the weights",
+      "question": {
+        "title": "The question that changes everything",
+        "description": "If the model \"only\" predicts the next token... how can it solve logic problems, translate between languages, or write functional code?"
+      },
+      "insight": {
+        "title": "The key insight: predicting ≠ reciting",
+        "description": "To correctly predict the next token in ALL possible contexts, the model is forced to develop internal representations that resemble understanding.",
+        "weightsAreNotComment": "# What the weights are NOT:",
+        "weightsAreNotExample": "{ \"The cat\" → \"eats\", \"It is\" → \"nice\", \"5+6\" → \"11\", ... }",
+        "weightsAreNotNote": "→ a fixed dictionary of answers",
+        "weightsAreComment": "# What the weights ARE:",
+        "weightsAreLine1": "if token_is_a_noun(X) and mentioned_in_context(X) → copy(X)",
+        "weightsAreLine2": "if position_after_article(pos) → predict_a_noun(pos)",
+        "weightsAreLine3": "if subject_verb_structure(ctx) → conjugate(verb, subject)",
+        "weightsAreLine4": "if arithmetic_operation(a, op, b) → compute(a, op, b)",
+        "weightsAreNote": "→ generic rules, applicable to any input"
+      },
+      "analogy": {
+        "title": "The GPS analogy",
+        "description1": "A GPS doesn't \"understand\" geography. It manipulates coordinates and shortest-path algorithms. Yet it guides you perfectly from point A to point B.",
+        "description2": "Similarly, an LLM doesn't \"understand\" language. But to correctly predict the next token across millions of different contexts, it is forced to develop internal structures that capture grammar, logic, and even some forms of reasoning."
+      },
+      "qkv": {
+        "title": "How Q/K/V encode programs",
+        "description": "The Q, K, V projection matrices are not just mathematical operations -- they encode \"questions\" and \"answers\" that the model asks the context.",
+        "line1_pre": "\"The cat\"",
+        "line1_post": "\"I am a noun, I'm looking for my verb\"",
+        "similarity": "↕ dot product = relevance score",
+        "line2_pre": "\"eats\"",
+        "line2_post": "\"I am a verb, I have a subject\"",
+        "line3_pre": "→ High score →",
+        "line3_highlight": "the model connects the subject to the verb"
+      },
+      "superposition": {
+        "title": "Superposition: one neuron, many concepts",
+        "description": "A neuron doesn't encode ONE concept. It contributes to hundreds of concepts simultaneously, with different weights:",
+        "comment": "# Neuron #4217 in layer 3:",
+        "contributes": "contributes",
+        "toConcept": "to concept",
+        "animal": "animal",
+        "feminine": "feminine",
+        "subject": "grammatical subject",
+        "recent": "recently mentioned",
+        "andMore": "... and ~500 other concepts",
+        "conclusion": "This is superposition -- the model compresses far more concepts than it has neurons. It's efficient but makes interpretation extremely difficult."
+      }
+    },
+    "grokking": {
+      "sectionTitle": "Grokking: sudden understanding",
+      "description": "A fascinating phenomenon discovered in 2022: a model can perfectly memorize its training data (100% on train) without understanding anything (0% on test)... then, after thousands of additional steps, suddenly generalize.",
+      "chartTitle": "Grokking: memorization then sudden understanding",
+      "chartIntro": "Imagine a model trained on all additions except <strong>5+6</strong>. At first, it memorizes each pair it has seen. Then, suddenly, it <em>understands</em> the addition algorithm -- and correctly answers 5+6 = 11, without ever having seen it.",
+      "chartAccuracyLabel": "Accuracy (%) over training",
+      "chartXAxisLabel": "Training steps",
+      "chartStepLabel": "Step {{step}}",
+      "chartTestNeverSeen": "Test (never seen)",
+      "chartTrainLabel": "Training",
+      "chartTrainLegend": "Training (seen data)",
+      "chartTestLabel": "Test",
+      "chartTestLegend": "Test (never-seen data)",
+      "chartExplanation": "The training curve (orange) reaches 100% <strong>well before</strong> the model generalizes. The test curve (green) stays at ~5% for thousands of steps, then <strong>jumps</strong> suddenly. If you stop too early, you have a parrot. If you continue, the parrot becomes a \"programmer\".",
+      "memorizationPhase": "Memorization",
+      "grokkingPhase": "Grokking!",
+      "weightsReorgTitle": "What gets reorganized in the weights?",
+      "phase1": {
+        "title": "Phase 1: Memorization",
+        "description": "The model achieves 100% on training data (it has memorized them), but 0% on new data. It memorized the answers without understanding the rule.",
+        "seen": "seen ✓",
+        "neverSeen": "never seen ✗",
+        "note": "= lookup table"
+      },
+      "phase2": {
+        "title": "Phase 2: Grokking",
+        "description": "Suddenly, after thousands of additional steps, performance on test data jumps to 100%. The model has discovered the underlying rule -- it has \"understood\".",
+        "note": "= generic algorithm"
+      },
+      "conclusion": "The network was \"only\" minimizing the error -- but the constant pressure of optimization forced it to find a more compact and general solution than simple memorization.",
+      "conditions": {
+        "title": "The conditions for the \"statistics → program\" transition",
+        "condition1": {
+          "title": "Enough diverse examples",
+          "description": "The model must see enough cases to extract the general pattern. A single example of 5+6 is not enough -- the other additions must \"surround\" the gap."
+        },
+        "condition2": {
+          "title": "Enough training time",
+          "description": "Grokking often happens well <strong>after</strong> the loss reaches zero. Training must continue for the weights to reorganize into a compact program."
+        },
+        "condition3": {
+          "title": "Regularization (weight decay)",
+          "description": "Forces weights to stay small, which pushes the model to find a <em>compact</em> solution (an algorithm) rather than a lookup table."
+        },
+        "condition4": {
+          "title": "Sufficient model size",
+          "description": "The model must have enough parameters to <em>represent</em> the algorithm. A network that is too small can only encode simple patterns."
+        }
+      }
+    },
+    "emergence": {
+      "sectionTitle": "Emergence: when size changes everything",
+      "description": "Certain capabilities appear suddenly when the model exceeds a certain size — they didn't exist in smaller versions.",
+      "abilities": {
+        "title": "Observed emergent capabilities",
+        "items": {
+          "arithmetic": "Mental arithmetic (addition of large numbers)",
+          "chainOfThought": "Chain-of-thought reasoning",
+          "wordPlay": "Wordplay and humor",
+          "codeGen": "Functional code generation",
+          "translation": "Translation between languages never seen as pairs"
+        }
+      },
+      "question": {
+        "title": "The big question",
+        "description": "No one knows exactly why these capabilities emerge at specific sizes. It's one of the most active mysteries in AI research."
+      },
+      "progression": {
+        "title": "The progression: statistics → rules → reasoning",
+        "level1": {
+          "params": "~50k params",
+          "model": "our model",
+          "label": "Local statistics",
+          "description": "\"The\" → \"cat\" (60%). Which characters follow which characters. Reproduces the texture of the language without understanding."
+        },
+        "level2": {
+          "params": "~100M params",
+          "model": "GPT-2 small",
+          "label": "Grammar and coherence",
+          "description": "Grammatically correct sentences. Subject tracking, verb agreement. Begins to understand structure."
+        },
+        "level3": {
+          "params": "~10B params",
+          "model": "LLaMA 7B",
+          "label": "Instruction following, translation",
+          "description": "Understands instructions. Translates between languages. Summarizes texts. Induction heads are fully developed."
+        },
+        "level4": {
+          "params": "~100B+ params",
+          "model": "GPT-4 / Claude",
+          "label": "Reasoning, code, math",
+          "description": "Chain-of-thought reasoning. Complex code writing. Mathematical problem solving. Handling of never-seen words with ease."
+        },
+        "threshold": "Below the threshold, the capability is <strong>absent</strong> (0%). Above it, it appears <strong>suddenly</strong>. It's as if the network needs a minimum number of \"circuits\" to encode certain algorithms."
+      },
+      "ourModel": {
+        "title": "Where does our model stand?",
+        "description1": "Our MiniLLM (~50,000 parameters) is at the very first stage. It has enough capacity to learn local statistical patterns (which characters follow which in French), but not enough to develop abstract grammatical understanding.",
+        "description2": "That's why \"glorbifex\" produces gibberish that resembles French without being it. The model produces the right texture (letter frequency, word length) but not the right structure (grammar, meaning).",
+        "description3": "Yet the mechanism is exactly the same as in GPT-4 or Claude. Only the scale changes -- and it's scale that makes \"understanding\" emerge."
+      }
+    },
+    "cost": {
+      "sectionTitle": "The price of intelligence: building an LLM",
+      "description": "Scale changes everything -- but scale has a cost. Training a model the size of GPT-4 or Claude is not a personal project: it's an industrial operation that mobilizes considerable resources.",
+      "data": {
+        "title": "Data: the raw fuel",
+        "description": "Before even talking about computation, an LLM needs a colossal amount of text. The model learns language patterns by seeing them billions of times -- and data quality matters as much as quantity.",
+        "tokens": {
+          "value": "~1 to 15 T",
+          "label": "training tokens",
+          "detail": "LLaMA 2: 2T tokens, LLaMA 3: 15T tokens. 1T tokens ≈ 750 billion words ≈ ~5 million books."
+        },
+        "rawData": {
+          "value": "~10 TB",
+          "label": "of raw text",
+          "detail": "Terabytes of data collected, filtered, deduplicated. Far more is collected then rejected during quality filtering."
+        },
+        "preparation": {
+          "value": "Months",
+          "label": "of preparation",
+          "detail": "Collecting, cleaning, filtering, deduplicating. Data curation is a project in itself."
+        },
+        "sourcesTitle": "Typical sources of training data:",
+        "sources": {
+          "webCrawl": {
+            "title": "Web crawl",
+            "detail": "Common Crawl, filtered web pages (~60-80%)"
+          },
+          "books": {
+            "title": "Books & articles",
+            "detail": "Literature, scientific publications (~10%)"
+          },
+          "code": {
+            "title": "Source code",
+            "detail": "GitHub, Stack Overflow (~5-10%)"
+          },
+          "conversations": {
+            "title": "Conversations",
+            "detail": "Forums, Wikipedia, dialogues (~5-10%)"
+          }
+        },
+        "sourcesNote": "The exact proportions are industry secrets. The data mix strongly influences the model's capabilities: more code → better at programming, more math → better at reasoning."
+      },
+      "infrastructure": {
+        "title": "Infrastructure: thousands of GPUs in parallel",
+        "description": "A single GPU is not enough -- nor even 10. Training a model with 100 billion parameters requires a cluster of thousands of high-end GPUs working together for weeks or even months.",
+        "rows": {
+          "mini": {
+            "model": "Our MiniLLM",
+            "params": "~50k",
+            "gpu": "1 CPU",
+            "time": "~5 min",
+            "cost": "~$0"
+          },
+          "gpt2": {
+            "model": "GPT-2",
+            "params": "1.5B",
+            "gpu": "~32 GPUs",
+            "time": "~1 week",
+            "cost": "~$50k"
+          },
+          "llama": {
+            "model": "LLaMA 2 70B",
+            "params": "70B",
+            "gpu": "2,000 A100 GPUs",
+            "time": "~35 days",
+            "cost": "~$2M"
+          },
+          "gpt4": {
+            "model": "GPT-4 (estimated)",
+            "params": "~1.8T",
+            "gpu": "~25,000 A100 GPUs",
+            "time": "~3 months",
+            "cost": "~$100M"
+          }
+        },
+        "tableNote": "Estimates based on publications from Meta (LLaMA), OpenAI, and community analyses. Real costs include R&D, failed iterations, and fine-tuning, often 2-5x more.",
+        "gpuNote": "An NVIDIA A100 GPU costs ~$10,000 to purchase, and ~$2/hour in the cloud. A cluster of 10,000 GPUs consumes as much electricity as a small town."
+      },
+      "trainingVsInference": {
+        "title": "The real cost: training, not using",
+        "description": "A common misconception: the cost of an LLM is not in its use (inference), but in its construction (training).",
+        "trainingTitle": "Training (one time)",
+        "trainingItems": {
+          "item1": "Thousands of GPUs for months",
+          "item2": "Tens to hundreds of millions of dollars",
+          "item3": "Teams of 50 to 200+ researchers and engineers",
+          "item4": "Iterations: a failed training run = start over",
+          "item5": "Energy consumption of several GWh"
+        },
+        "inferenceTitle": "Inference (per request)",
+        "inferenceItems": {
+          "item1": "A few GPUs per request",
+          "item2": "~$0.01 to $0.10 per request",
+          "item3": "A few seconds of computation",
+          "item4": "Optimizable: quantization, distillation, caching",
+          "item5": "The trained model is \"free\" to reuse"
+        },
+        "conclusion": "It's like building an airplane: design and manufacturing cost billions, but once built, each flight is relatively inexpensive. Training is the initial investment -- inference is the operating cost."
+      },
+      "challenges": {
+        "title": "The challenges of large-scale training",
+        "challenge1": {
+          "title": "Hardware failures",
+          "description": "With 10,000 GPUs, the probability of a GPU failing every day is almost certain. Training must be able to resume automatically from the last checkpoint."
+        },
+        "challenge2": {
+          "title": "Numerical instability",
+          "description": "At this scale, gradients can explode or vanish. Precise orchestration of the learning rate, warm-up, and numerical precision (mixed precision: FP16/BF16) is required."
+        },
+        "challenge3": {
+          "title": "Distributed parallelism",
+          "description": "A 100B parameter model doesn't fit in the memory of a single GPU (~80 GB). It must be split: data parallelism, tensor parallelism, pipeline parallelism. Synchronizing all this is a major engineering challenge."
+        },
+        "challenge4": {
+          "title": "Data quality",
+          "description": "\"Garbage in, garbage out.\" Biased, duplicated, or toxic data end up in the model's behavior. Filtering and curation are as important as the architecture itself."
+        },
+        "challenge5": {
+          "title": "Environmental impact",
+          "description": "Training GPT-3 consumed about 1,300 MWh -- equivalent to the annual consumption of ~120 households. More recent models consume much more. This is an active research topic: how to reduce this footprint."
+        }
+      },
+      "ourModel": {
+        "title": "Our model: training in miniature",
+        "description": "Our MiniLLM trains in a few minutes on a CPU -- no cluster or budget needed. The mechanism is exactly the same (forward → loss → backward → update), but at a 1,000,000x smaller scale.",
+        "miniLabel": "Our model:",
+        "miniWeights": "~50k weights",
+        "miniTime": "~5 min",
+        "miniGpu": "1 CPU",
+        "miniFree": "free",
+        "gpt4Label": "GPT-4 (estimated):",
+        "gpt4Weights": "~1.8T weights",
+        "gpt4Time": "~3 months",
+        "gpt4Gpu": "25,000 GPUs",
+        "gpt4Cost": "~$100M",
+        "note": "That's the advantage of an educational model: you can experiment, break things, start over -- without consequences. Real models don't have that luxury."
+      }
+    },
+    "interpretability": {
+      "sectionTitle": "Mechanistic interpretability: opening the black box",
+      "description": "Researchers are beginning to identify \"circuits\" in the model's weights -- groups of neurons that implement recognizable functions.",
+      "circuits": {
+        "title": "Discovered circuits",
+        "inductionHead": {
+          "title": "Induction head",
+          "description": "Detects the pattern \"A B ... A\" and predicts B. This is the context-copying mechanism."
+        },
+        "indirectObject": {
+          "title": "Indirect object identification",
+          "description": "The model identifies who an action is directed toward in a complex sentence."
+        },
+        "booleanLogic": {
+          "title": "Boolean logic circuits",
+          "description": "Individual neurons implement AND, OR, NOT on concepts."
+        },
+        "grokkingObserved": {
+          "title": "Grokking observed",
+          "description": "Researchers have seen that during grokking, the weights reorganize: memorization circuits are progressively replaced by algorithmic circuits using periodic functions (sine/cosine). The model \"invents\" mathematics."
+        }
+      },
+      "ultimateDream": {
+        "title": "The ultimate dream",
+        "description": "If we could fully decompile an LLM, we could:",
+        "verify": {
+          "title": "Verify",
+          "description": "Guarantee that the model doesn't lie, doesn't fabricate facts, doesn't contain dangerous biases."
+        },
+        "fix": {
+          "title": "Fix",
+          "description": "Modify a specific circuit without retraining the entire model. Precision surgery on the weights."
+        },
+        "understand": {
+          "title": "Understand",
+          "description": "Know how the model reasons, not just what it produces. Turn the black box into a glass box."
+        },
+        "note": "We're not there yet -- but each deciphered circuit brings us closer."
+      }
+    },
+    "whatWeKnow": {
+      "sectionTitle": "What we know (and don't know)",
+      "know": {
+        "title": "What we know",
+        "items": {
+          "prediction": "Predicting the next token forces the model to develop rich internal representations",
+          "programs": "The weights encode \"programs\" — not just statistics",
+          "grokking": "Grokking shows that understanding can emerge from memorization",
+          "emergent": "Certain capabilities emerge with model size",
+          "circuits": "Interpretable circuits exist in the weights"
+        }
+      },
+      "dontKnow": {
+        "title": "What we don't know",
+        "items": {
+          "understanding": "Does the model truly \"understand\", or is it simulating understanding?",
+          "whyEmergence": "Why do certain capabilities emerge at specific sizes?",
+          "consciousness": "Is there a form of \"consciousness\" in these systems?",
+          "limits": "What are the fundamental limits of this approach?",
+          "alignment": "How do we ensure these \"hidden programs\" do what we want?"
+        }
+      }
+    },
+    "closing": {
+      "title": "The journey continues",
+      "description": "You now have a deep understanding of how LLMs work — from tokenization to generation, and beyond. The field is evolving at a dizzying pace. Every month brings new discoveries about what these models truly learn.",
+      "playgroundCta": "Experiment in the Playground",
+      "documentationCta": "Explore the technical documentation"
+    }
+  },
+  "training": {
+    "tokenization": {
+      "title": "Tokenization",
+      "subtitle": "From text to numbers",
+      "exampleContext": "The tokenizer will split the text into tokens and assign a unique number to each one.",
+      "problem": {
+        "title": "The problem: a computer doesn't understand letters",
+        "description1": "A processor only manipulates numbers (0s and 1s). The text \"The cat\" is just a sequence of pixels on your screen — for a computer, it's noise.",
+        "description2": "For a model to be able to \"read\" text, it must first convert it into numbers. That's exactly what tokenization does: assign a unique number to each piece of text."
+      },
+      "idea": "Tokenization is the very first step. We build a vocabulary — a dictionary that maps each \"piece of text\" (called a token) to a unique number.",
+      "vocab": {
+        "title": "The lookup table (vocabulary)",
+        "description": "We scan through all the training text and identify each unique token. Then we assign a number to each one — that's the vocabulary.",
+        "headers": {
+          "character": "Character",
+          "id": "ID"
+        },
+        "note": "→ 7 unique tokens found in the sentence (count: space, T, a, c, e, h, t = 7). The number is arbitrary — what matters is that each token has a unique ID."
+      },
+      "specialTokens": {
+        "title": "Special tokens: <BOS> and <EOS>",
+        "description": "In addition to the \"normal\" tokens (letters, spaces, punctuation), the vocabulary contains two special tokens reserved for the last two IDs:",
+        "bos": {
+          "title": "<BOS> — Beginning of Sentence",
+          "description": "Placed before each sentence in the corpus during training. It signals to the model: \"a new sentence begins.\""
+        },
+        "eos": {
+          "title": "<EOS> — End of Sentence",
+          "description": "Placed after each sentence. The model learns to predict it when the sentence is finished."
+        },
+        "note": "These tokens are invisible to the user — the displayed text never contains them. But they are essential for the model to learn to produce complete sentences.",
+        "pseudocode": "Result in the training corpus:",
+        "exampleSentence2": "The sun shines"
+      },
+      "comparison": {
+        "title": "Three ways to split text",
+        "description": "The choice of splitting granularity is crucial. Let's take a long word to see the difference: \"unconstitutionally\"",
+        "charLevel": {
+          "title": "Character level (our mini-LLM)",
+          "note": "19 tokens. Tiny vocabulary (~50 characters), but sequences are very long."
+        },
+        "subword": {
+          "title": "Subword level (GPT, Claude)",
+          "note": "5 tokens. The pieces are syllables or common fragments. A never-seen word is split into known parts."
+        },
+        "word": {
+          "title": "Whole word level",
+          "note": "1 token if the word is in the vocabulary. Otherwise? Impossible to process! You would need a vocabulary containing every word in the language → several million."
+        },
+        "conclusion": "Our mini-LLM uses character level: it's the simplest to understand. Each letter, space, or punctuation mark = one token.",
+        "conclusionBefore": "Our mini-LLM uses ",
+        "conclusionLevel": "character level",
+        "conclusionAfter": ": it's the simplest to understand. Each letter, space, or punctuation mark = one token. Vocabulary = {{vocabSize}} tokens."
+      },
+      "calculation": {
+        "concreteTitle": "Concrete example with \"The cat\"",
+        "concreteDescription": "Let's see how each token is converted into a number.",
+        "step1Title": "Step 1: Build the vocabulary",
+        "step1Description": "We scan through all the training text and list the unique characters:",
+        "step2Title": "Step 2: Assign a number to each token",
+        "step2Description": "We sort the tokens alphabetically and number them starting from 0. The choice of order doesn't matter — what matters is that each token has a unique number:",
+        "step2Note": "We could have numbered \"a\" = 0, \"b\" = 1, etc. — the final result would be the same. The model will learn the relationships between tokens during training, not from their numbers.",
+        "step3Title": "Step 3: Convert the sentence into numbers",
+        "step3Description": "We replace each token with its ID by looking it up in the vocabulary.",
+        "step3Lookup": "→ look up in dictionary →",
+        "step3Final": "→ 7 tokens → 7 numbers. The next step (embedding) transforms these IDs into vectors.",
+        "gridTitle": "Interactive grid",
+        "gridDescription": "Hover over each token to see its ID. 7 unique tokens in our vocabulary.",
+        "step1TextLabel": "Text:",
+        "step1UniqueChars": "Unique characters:",
+        "step1VocabOf": "Vocabulary of {{vocabSize}} tokens",
+        "textLabel": "Text:",
+        "idsLabel": "IDs:"
+      },
+      "summary": {
+        "title": "Summary",
+        "inputLabel": "Input",
+        "inputText": "Raw text: \"The cat\" (7 characters)",
+        "operationLabel": "Operation",
+        "operationTag": "Fixed (not learned)",
+        "operationText": "Lookup in the vocabulary (7 unique tokens)",
+        "outputLabel": "Output",
+        "note": "These numbers have no meaning on their own — they are just identifiers. The next step (embedding) will give them meaning."
+      },
+      "deepDive": {
+        "title": "How do real tokenizers work?",
+        "bpeIntro": "Modern LLMs (GPT, Claude) use BPE (Byte Pair Encoding): an algorithm that builds the vocabulary iteratively.",
+        "bpePrinciple": "Principle: start with individual characters, then merge the most frequent pairs into a single token, again and again.",
+        "bpeResult": "Result: common words become a single token, rare words are split into subwords. GPT-4 has a vocabulary of about 100,000 tokens.",
+        "bpeNote": "Our character-by-character tokenizer is simpler but less efficient: the model must first learn to assemble characters into words.",
+        "bpeStep0": "Step 0: individual characters",
+        "bpe7tokens": "(7 tokens)",
+        "bpeMerge1": "Merge 1: c+h → ch (most frequent pair)",
+        "bpe6tokens": "(6 tokens)",
+        "bpeMerge2": "After several merges...",
+        "bpe3tokens": "(3 tokens)"
+      },
+      "explanation": {
+        "before": "",
+        "tokenization": "Tokenization",
+        "middle": " is the very first step. We build a ",
+        "vocab": "vocabulary",
+        "dictDesc": "a dictionary that maps each \"piece of text\" (called a ",
+        "token": "token",
+        "after": ") to a unique number."
+      }
+    },
+    "embedding": {
+      "title": "Embedding",
+      "subtitle": "From numbers to vectors",
+      "exampleContext": "Each token number is transformed into a vector — a list of decimal numbers.",
+      "problem": {
+        "title": "The problem: a number contains no information",
+        "description1": "After tokenization, \"T\" = 1 and \"e\" = 4. But these numbers are arbitrary: the fact that 1 > 4 doesn't mean \"T\" is \"greater\" than \"e\".",
+        "description2": "Worse: with a simple number, the model cannot express that \"a\" and \"e\" are vowels (similar), while \"a\" and \"z\" are very different. We need a richer representation.",
+        "conclusion": "→ The model \"thinks\" that \"a\" is closer to \"c\" than to \"e\". That's absurd! Alphabetical order says nothing about the linguistic role of a letter.",
+        "solution": "We need a representation where similar tokens (vowels together, consonants together, letters that appear in the same contexts) are actually close.",
+        "desc1Before": "After tokenization, \"T\" = {{tokL}} and \"e\" = {{tokE}}. But these numbers are ",
+        "desc1Arbitrary": "arbitrary",
+        "desc1After": ": the fact that {{tokL}} > {{tokE}} doesn't mean \"T\" is \"greater\" than \"e\".",
+        "desc2Before": "Worse: with a simple number, the model cannot express that \"a\" and \"e\" are ",
+        "desc2Vowels": "vowels (similar)",
+        "desc2After": ", while \"a\" and \"z\" are very different. We need a richer representation.",
+        "concreteLabel": "Concretely with our vocabulary:",
+        "concreteDesc1Before": "If we look for \"a\" and \"e\" in \"m",
+        "concreteDesc1After": "nge\" (eat), both work.",
+        "concreteDesc2": "But their IDs are far apart. Let's try",
+        "concreteSubtraction": "subtraction",
+        "concreteDesc2After": ":",
+        "gapVowels": "← vowels, gap of 2",
+        "gapVowelConsonant": "← vowel/consonant, gap of 1!"
+      },
+      "solution": {
+        "before": "",
+        "middle": " solves this problem: instead of a single number, each token receives a ",
+        "vector": "vector",
+        "after": " — a list of decimal numbers ",
+        "dimsSimplified": "4 in our simplified example",
+        "dimsReal": ", 64 in our actual mini-LLM"
+      },
+      "dimensions": {
+        "title": "The 64 dimensions: what do they represent?",
+        "description": "The answer is surprising: we don't know in advance. Nobody decides that dimension 0 = \"vowel\" and dimension 1 = \"frequency\". Initially, the values are random. It's the model that, through training, discovers what each dimension should capture.",
+        "gpsAnalogy": "Analogy: GPS coordinates",
+        "gpsDescription": "A city is described by 2 numbers: latitude and longitude. Neither one means \"big city\" or \"coastal\" — but together, these 2 numbers uniquely identify every place on Earth. The 64 dimensions form a unique \"coordinate\" for each token in a meaning space.",
+        "whyQuestion": "Why 64 and not 4 or 10,000?",
+        "tradeoff": "It's a tradeoff:",
+        "dim4": "4 dimensions",
+        "dim4Desc": "too few to capture nuances between tokens",
+        "dim64": "64 dimensions",
+        "dim64Desc": "good tradeoff for {{vocabSize}} tokens (our mini-LLM)",
+        "dim10k": "10,000+ dimensions",
+        "dim10kDesc": "too many parameters to train for a small model",
+        "gpt3Example": "GPT-3: vocabulary of 50,257 tokens → d_model = 12,288 dimensions"
+      },
+      "lookupTable": {
+        "title": "How does it work in practice?",
+        "description": "The embedding is a lookup table: a matrix with one row per token and one column per dimension.",
+        "note": "To find the vector for the token \"T\" (ID 1), we take row 1. No complex computation — just a table lookup!",
+        "matrixComment": "W_emb: matrix of size {{vocabSize}} × {{dModel}}",
+        "matrixArrows": "↓ each row = a token's vector",
+        "tokenLabel": "Token ID {{id}}"
+      },
+      "learning": {
+        "title": "Random at first, meaningful after training",
+        "before": "Before training: the 64 values for each token are initialized randomly. The tokens \"a\" and \"e\" are no closer than \"a\" and \"z\".",
+        "after": "After training: the model has adjusted the values so that tokens appearing in similar contexts have close vectors. \"a\" and \"e\" end up in the same \"zone\" of the space because they often play the same role (vowel in a word).",
+        "note": "Tokens that often follow each other (like \"q\" and \"u\" in French) or that are interchangeable (like \"a\" and \"e\" in \"m_nge\") have close vectors. This is not programmed — it is learned.",
+        "afterTrainingComment": "After training:"
+      },
+      "calculation": {
+        "lookupTitle": "The lookup: from ID to vector",
+        "lookupDescription": "We replace each ID with its row in the embedding matrix.",
+        "sizeTitle": "Embedding matrix size",
+        "interactiveTitle": "Interactive embedding matrix",
+        "interactiveDescription": "Each row of the matrix is a token's vector. Initially, these values are random. During training, similar tokens will have close vectors.",
+        "lookupIntro": "For each token, we look at its ID and take the corresponding row from the W_emb matrix:",
+        "tokensLabel": "Tokens:",
+        "matrixRow": "row {{row}} of W_emb",
+        "rowDetail": "Row {{row}} of the W_emb matrix ({{vocabSize}} × {{dModel}})",
+        "lookupSummary": "✓ 7 tokens → 7 vectors of {{dModel}} dimensions. Each is the corresponding row in W_emb.",
+        "sizeSimplified": "Simplified:",
+        "sizeDimensions": "dimensions",
+        "sizeLearnableParams": "learnable parameters",
+        "sizeRealMiniLLM": "Actual mini-LLM:",
+        "sizeParams": "parameters",
+        "sizeGpt3Params": "~617 million"
+      },
+      "summary": {
+        "title": "Summary",
+        "inputLabel": "Input (output of step 1)",
+        "operationLabel": "Operation",
+        "operationTag": "Learned parameter",
+        "outputLabel": "Output",
+        "note": "The token now has a rich \"identity\". But it doesn't yet know where it is in the sentence → that's the role of positional encoding (next step).",
+        "operationDesc": "W_emb matrix: {{vocabSize}} × {{dModel}} = {{totalParams}} learnable parameters",
+        "operationMatrixRow": "row {{row}} of W_emb",
+        "operationVectorOf": "vector of {{dModel}} dimensions",
+        "operationNote": "The values are initially random — they adjust during training.",
+        "outputNNumbers": "{{dModel}} numbers"
+      },
+      "deepDive": {
+        "title": "The mathematics of embedding",
+        "lookupFormula": "The embedding vector is simply the corresponding row in the W_emb matrix. It's an indexing operation, not a matrix multiplication.",
+        "dimensionsFormula": "The matrix has V rows (vocabulary size) and d_model columns (model dimension).",
+        "similarityFormula": "To measure the similarity between two vectors, we use cosine similarity (between −1 and +1). After training, sim(\"a\", \"e\") will be higher than sim(\"a\", \"z\") because vowels share similar contexts.",
+        "concepts": {
+          "lookup": {
+            "name": "The lookup",
+            "explanation": "The embedding vector is simply the corresponding row in the W_emb matrix. It's an indexing operation, not a matrix multiplication."
+          },
+          "dimensions": {
+            "name": "W_emb dimensions",
+            "explanation": "The matrix has {{vocabSize}} rows (vocabulary size) and {{dModel}} columns (model dimension). Total: {{totalParams}} parameters."
+          },
+          "similarity": {
+            "name": "Cosine similarity",
+            "explanation": "To measure the similarity between two vectors, we use cosine similarity (between −1 and +1). After training, sim(\"a\", \"e\") will be higher than sim(\"a\", \"z\") because vowels share similar contexts."
+          }
+        }
+      }
+    },
+    "positionalEncoding": {
+      "title": "Positional Encoding",
+      "subtitle": "Word order",
+      "exampleContext": "We add a position signal to each vector so the model knows which token comes first.",
+      "problem": {
+        "title": "The problem: the model doesn't know the order of tokens",
+        "description1": "The Transformer processes all tokens at the same time (in parallel). Unlike a human who reads left to right, the model sees all tokens at once.",
+        "description2": "Consequence: for it, \"The cat\" and \"cat The\" produce the same vectors. But order changes meaning — we need a mechanism to encode it."
+      },
+      "solution": {
+        "before": "The ",
+        "middle": " solves this problem: we ",
+        "add": "add",
+        "afterAdd": " to each embedding vector a ",
+        "signal": "position signal",
+        "after": " — a unique vector per position that tells the model \"I am the 1st token\", \"I am the 2nd\", etc."
+      },
+      "sinCosReminder": {
+        "title": "Reminder: sine and cosine",
+        "description": "Sine and cosine are functions that oscillate between −1 and +1. Imagine a point rotating on a circle:",
+        "sinLabel": "sin(x) = height of the point",
+        "sinNote": "Starts at 0, rises to 1, comes back down",
+        "cosLabel": "cos(x) = horizontal position",
+        "cosNote": "Starts at 1, drops to 0, then −1",
+        "property": "Key property: sin and cos oscillate at the same speed but are offset — when sin is at 0, cos is at 1. Together, they form a unique \"fingerprint\" for each point on the circle."
+      },
+      "clockAnalogy": {
+        "title": "The clock analogy",
+        "description": "Imagine a clock with several hands rotating at different speeds:",
+        "fastHand": "Fast hand (dimension 0): completes a full rotation in a few positions → changes a lot between position 0 and 1",
+        "mediumHand": "Medium hand (dimension 2): rotates more slowly → changes less between neighboring positions",
+        "slowHand": "Slow hand (dimension 4): barely moves → almost identical for nearby positions",
+        "conclusion": "By combining all the hands, each position gets a unique angle on each one — that's its \"barcode\". Even with thousands of positions, no combination is identical.",
+        "fastHandLabel": "Fast hand",
+        "fastHandDesc": "(dimension 0): completes a full rotation in a few positions → changes a lot between position 0 and 1",
+        "mediumHandLabel": "Medium hand",
+        "mediumHandDesc": "(dimension 2): rotates more slowly → changes less between neighboring positions",
+        "slowHandLabel": "Slow hand",
+        "slowHandDesc": "(dimension 4): barely moves → almost identical for nearby positions",
+        "conclusionBefore": "By ",
+        "conclusionStrong": "combining all the hands",
+        "conclusionAfter": ", each position gets a unique angle on each one — that's its \"barcode\". Even with thousands of positions, no combination is identical."
+      },
+      "whySinCos": {
+        "title": "Why sin/cos and not just 0, 1, 2, 3...?",
+        "bounded": "Bounded values: sin/cos stay between −1 and +1, regardless of the position. With raw numbers (0, 1, 2... 1000), values would explode.",
+        "relative": "Relative distances: the model can learn that \"2 positions apart\" always corresponds to the same transformation, regardless of absolute position.",
+        "generalization": "Generalization: the signal is regular and predictable — the model can extrapolate to positions it has never seen during training.",
+        "boundedLabel": "Bounded values",
+        "boundedDesc": ": sin/cos stay between −1 and +1, regardless of the position. With raw numbers (0, 1, 2... 1000), values would explode.",
+        "relativeLabel": "Relative distances",
+        "relativeDesc": ": the model can learn that \"2 positions apart\" always corresponds to the same transformation, regardless of absolute position.",
+        "generalizationLabel": "Generalization",
+        "generalizationDesc": ": the signal is regular and predictable — the model can extrapolate to positions it has never seen during training."
+      },
+      "duringTraining": {
+        "title": "During training: PEs are fixed, but the model learns to read them",
+        "description": "Crucial point: the sin/cos values never change. Position 0 always receives the same PE vector, whether the token is \"T\", \"I\", or \"U\". These are not learned parameters — it's a fixed signal, like a barcode printed on each position.",
+        "whatLearns": "So what does the model learn exactly? It learns to exploit this signal through its learned parameters — especially the W_Q and W_K matrices of the attention mechanism.",
+        "rulerAnalogy": "In summary: the PE is a fixed reference, like the numbers on a ruler. The ruler never changes — but a carpenter learns to use it to measure, align, and cut.",
+        "descBefore": "Crucial point: the sin/cos values ",
+        "descNever": "never",
+        "descAfterNever": " change. Position 0 always receives the same PE vector, whether the token is \"T\", \"I\", or \"U\". These are ",
+        "descNotLearned": "not learned parameters",
+        "descAfterNotLearned": " — it's a fixed signal, like a barcode printed on each position.",
+        "whatLearnsBefore": "So what does the model learn exactly? It learns ",
+        "whatLearnsStrong": "to exploit this signal",
+        "whatLearnsAfter": " through its learned parameters — especially the W",
+        "whatLearnsAttention": "the attention mechanism",
+        "whatLearnsStep4": "→ step 4",
+        "howItWorks": "How it works concretely:",
+        "step1Title": "1. The input vector mixes identity and position",
+        "step1Vector": "→ The vector contains TWO pieces of information: \"this is token c\" AND \"this is position 3\"",
+        "step2Title": "2. Attention learns to read the position",
+        "step2Desc": "When the model computes Q×K",
+        "step2DescAfterSup": " (the attention score), the W",
+        "step2DescLearn": "extract positional information",
+        "step2DescAfterLearn": " from the combined vector. For example, the model can learn a pattern like:",
+        "step2Pattern1": "\"To predict the next token, look especially at ",
+        "step2Pattern1Highlight": "1 position before me",
+        "step2Pattern1After": "\"",
+        "step2Pattern2Before": "\"The token ",
+        "step2Pattern2Highlight": "2 positions before",
+        "step2Pattern2After": " is also useful\"",
+        "step2Pattern3Before": "\"The very beginning of the sentence (",
+        "step2Pattern3Highlight": "position 0",
+        "step2Pattern3After": ") often contains a capital letter\"",
+        "step3Title": "3. The magic: relative distances are stable",
+        "step3DescBefore": "Thanks to the properties of sin/cos, the ",
+        "step3DescDiff1": "difference PE(5) − PE(3)",
+        "step3DescMiddle": " is similar to the ",
+        "step3DescDiff2": "difference PE(12) − PE(10)",
+        "step3DescAfter": ". So the pattern \"look 2 positions back\" works at ",
+        "step3DescAnywhere": "any point",
+        "step3DescEnd": " in the sentence, without having to be learned separately for each position.",
+        "exampleTitle": "Example during training:",
+        "exampleDesc1Before": "The model sees hundreds of sentences. At ",
+        "exampleDesc1Pos": "position 3",
+        "exampleDesc1After": ", it encounters sometimes \"c\" (in \"Le ",
+        "exampleDesc1Chat": "c",
+        "exampleDesc1Middle": "hat\"), sometimes \"s\" (in \"Le ",
+        "exampleDesc1Soleil": "s",
+        "exampleDesc1End1": "oleil\"), sometimes \"m\" (in \"Un ",
+        "exampleDesc1Matin": "m",
+        "exampleDesc1End2": "atin\").",
+        "exampleDesc2Before": "The PE for position 3 is ",
+        "exampleDesc2Same": "always the same",
+        "exampleDesc2After": ". But the token changes. The model then learns ",
+        "exampleDesc2Patterns": "statistical regularities",
+        "exampleDesc2End": " tied to positions:",
+        "examplePos0": "often a capital letter → the model learns that PE(0) signals the start of a sentence",
+        "examplePos2": "often a space → the model learns that PE(2) often signals a word boundary",
+        "examplePosN": "last token → the model learns end-of-sequence patterns",
+        "exampleConclusionBefore": "It's like learning that in French, the ",
+        "exampleConclusionStrong": "3rd letter of a word",
+        "exampleConclusionMiddle": " is often a vowel — nobody programmed it, the model ",
+        "exampleConclusionDiscovers": "discovers",
+        "exampleConclusionEnd": " it thanks to the constant position signal.",
+        "rulerBefore": "In summary: the PE is a ",
+        "rulerStrong1": "fixed reference",
+        "rulerMiddle": ", like the numbers on a ruler. The ruler never changes — but a carpenter learns to ",
+        "rulerStrong2": "use it",
+        "rulerAfter": " to measure, align, and cut. The model's parameters",
+        "rulerParams": " are the \"carpenter\" who learns to read this reference.",
+        "whatLearnsAndW": " and W",
+        "whatLearnsOf": " of ",
+        "step2DescLearnBefore": " learn to "
+      },
+      "calculation": {
+        "formulaTitle": "Understanding the formula",
+        "formulaDescription": "The formula is: sin(pos / base^(2i/d_model))",
+        "matrixTitle": "Building the PE matrix",
+        "matrixDescription": "We compute sin/cos for each position. Fast frequency (i=0) → changes a lot between positions. Slow frequency (i=1) → changes less.",
+        "matrixNote": "→ Each row is unique: it's the \"barcode\" of each position.",
+        "additionTitle": "Embedding + PE → Final vector (the 7 tokens of \"The cat\")",
+        "additionDescription": "We add the embedding (token identity) to the positional vector (its position).",
+        "additionFinal": "→ 7 enriched vectors of 4 dimensions. Each encodes the token's identity AND its position. These are the vectors that enter the attention mechanism.",
+        "formulaPos": "= the position of the token in the sentence (0, 1, 2, 3...)",
+        "formulaI": "= the pair number of dimensions (i=0 → dims 0-1, i=1 → dims 2-3)",
+        "formulaDmodel": "= the total size of the vector =",
+        "formulaDmodelSuffix": "in our example",
+        "formulaBase": "= 10 in our example (10,000 in real models)",
+        "formula2i": "= controls the ",
+        "formula2iStrong": "frequency",
+        "formula2iDesc": ". i=0: freq = 1 (fast). i=1: freq = √10 ≈ 3.16 (slower).",
+        "formulaPairNote": "Each pair of dimensions (sin, cos) uses the same ",
+        "formulaPairNoteI": "i",
+        "formulaPairNoteEnd": ". Even dimension (0, 2) → sin. Odd dimension (1, 3) → cos.",
+        "matrixBuildTitle": "Building the PE matrix ({{count}} positions × {{dims}} dimensions)",
+        "matrixBuildDesc": "We compute sin/cos for each position. Fast frequency (i=0) → changes a lot between positions. Slow frequency (i=1) → changes less.",
+        "matrixBuildFinal": "→ Each row is unique: it's the \"barcode\" of each position.",
+        "matrixBuildNote": "Pos=0 → sin(0)=0 and cos(0)=1 everywhere. Dims 0-1 (i=0, fast frequency) change a lot between positions — dims 2-3 (i=1, slow frequency) change less.",
+        "additionDesc": "We add the embedding (token identity) to the positional vector (its position). The result encodes both pieces of information — it will be the input to ",
+        "additionDescAttention": "the attention mechanism",
+        "additionDescVectorReminder": "Reminder: vector addition",
+        "additionFinalDynamic": "→ 7 enriched vectors of {{dModel}} dimensions. Each encodes the token's identity AND its position. These are the vectors that enter the attention mechanism.",
+        "additionNote": "Notice how PE(0) = [0, 1, 0, 1] (sin/cos of 0) barely modifies \"L\", while subsequent positions progressively shift the vectors in the space."
+      },
+      "summary": {
+        "title": "Summary",
+        "inputLabel": "Input (output of step 2)",
+        "operationLabel": "Operation",
+        "operationTag": "Fixed (not learned)",
+        "operationText": "Addition of the positional vector (sin/cos, computed by formula):",
+        "outputLabel": "Output",
+        "note": "The model now receives a vector that encodes both what the token is and where it is in the sequence. The next step (attention) will allow tokens to \"look at\" each other.",
+        "pe0Note": "← sin(0)=0, cos(0)=1",
+        "pe6Note": "← unique values for pos 6",
+        "operationFormula": "final vector = "
+      },
+      "deepDive": {
+        "title": "Positional encoding formulas",
+        "evenDim": "Even dimension (2i)",
+        "oddDim": "Odd dimension (2i+1)",
+        "addition": "Addition to the embedding",
+        "evenDimExplanation": "For even dimensions (0, 2), we use sine. The denominator base^(2i/d_model) controls the frequency: i=0 → high frequency (fast hand), i=1 → low frequency (slow hand). With d_model=4 and base=10: dim 0 = sin(pos/1), dim 2 = sin(pos/√10).",
+        "oddDimExplanation": "For odd dimensions (1, 3), we use cosine with the same frequency as the corresponding even dimension. The (sin, cos) pair at the same frequency forms a circle — this is what allows the model to capture relative distances between positions.",
+        "additionName": "Addition to the embedding",
+        "additionExplanation": "The positional vector is simply added to the token's embedding. The network then learns to exploit both pieces of information (identity + position) mixed in the same vector."
+      }
+    },
+    "attention": {
+      "title": "Attention",
+      "subtitle": "Understanding context",
+      "exampleContext": "The attention mechanism allows each token to 'look at' the others to understand context.",
+      "problem": {
+        "title": "The problem: each token is isolated in its own bubble",
+        "description1": "After embedding and positional encoding, each token has a vector of 64 numbers. But these vectors are independent: they know nothing about their neighbors.",
+        "description2": "Yet the meaning of a token depends entirely on its context:",
+        "contextNote": "The tokens \"c, a, t\" have the same vectors in both sentences. We need a mechanism that allows tokens to influence each other.",
+        "example1Before": "\"The",
+        "example1Bold": "cat",
+        "example1After": "eats\" → cat = animal",
+        "example2Before": "\"The",
+        "example2Bold": "chat",
+        "example2After": "online\" → chat = conversation"
+      },
+      "mathChallenge": {
+        "title": "The mathematical challenge: how to combine vectors intelligently?",
+        "description": "We have 7 vectors (one per token of \"The cat\"). We want to produce 7 new vectors where each one integrates information from the others.",
+        "stepA": "Step A: a weighted average whose weights adapt",
+        "stepB": "Step B: the dot product measures alignment",
+        "stepC": "Step C: the problem — a single dot product isn't enough",
+        "stepD": "Step D: the solution — project into different spaces before comparing",
+        "buildSolution": "Let's build the solution step by step:",
+        "stepADescription1": "The basic idea: to create a new vector for token \"t\", we compute a",
+        "stepABold1": "weighted average",
+        "stepADescription2": "of all vectors. The weights (w₁, w₂, ...) determine",
+        "stepABold2": "how much each token influences",
+        "stepADescription3": "the result.",
+        "stepACodeComment": "// Weighted average for token \"t\" (position 7):",
+        "stepAFormula": "new(t) = w₁·vec(L) + w₂·vec(e) + w₃·vec(⎵) + ... + w₇·vec(t)",
+        "stepACodeQuestion": "→ But how do we compute the weights w₁...w₇?",
+        "stepBDescription1": "The dot product between two vectors gives a number that measures their",
+        "stepBBold": "alignment",
+        "stepBDescription2": ". The more the vectors point in the same direction, the higher the score:",
+        "dotProductLabel": "// Dot product:",
+        "alignedLabel": "// Aligned vectors:",
+        "alignedNote": "(high score)",
+        "oppositeLabel": "// Opposite vectors:",
+        "oppositeNote": "(negative score)",
+        "stepBConclusion": "→ We can use the dot product as an attention score: the more aligned two vectors are, the more they influence each other.",
+        "stepCDescription1": "If we compute directly",
+        "stepCDescription2": ", we compare the raw embeddings. But a single embedding encodes everything at once (identity, position, grammatical role...).",
+        "stepCCodeComment1": "// vec(t) · vec(a) → compares EVERYTHING at once",
+        "stepCCodeComment2": "// We can't choose to compare only the grammatical role,",
+        "stepCCodeComment3": "// or only the position, or only the meaning...",
+        "stepCCodeConclusion": "→ We need to be able to compare on specific aspects, not everything at once.",
+        "stepDDescription1": "The key idea: multiply each embedding by a",
+        "stepDBold1": "learned matrix",
+        "stepDDescription2": " to \"project\" the vector into a new space where comparison is more ",
+        "stepDEmphasis": "targeted",
+        "stepDNoProjection": "// Without projection (compares everything):",
+        "stepDNoProjectionNote": "(compares everything as a block)",
+        "stepDWithProjection": "// With projection (compares specific aspects):",
+        "stepDLearnedMatrix": "(learned matrix)",
+        "stepDOtherLearnedMatrix": "(another learned matrix)",
+        "stepDLearnedSimilarity": "(learned, targeted similarity)",
+        "stepDConclusion": "→ W₁ and W₂ are learned by backpropagation. The network discovers which aspects to compare.",
+        "stepDThirdProjection": "And for the result of the weighted average, we use a third projection — because we don't want to mix the same aspects we compared. Result:",
+        "projQNote": "\"which aspect I show to be compared\"",
+        "projKNote": "\"which aspect I show to compare others\"",
+        "projVNote": "\"what information I contribute to the mix\"",
+        "namesOriginNote": "The names Q, K, V come from database vocabulary (Query/Key/Value). It's an imperfect analogy — see the next section."
+      },
+      "honesty": {
+        "title": "Let's be honest: Q, K, V are names, not semantic concepts",
+        "description1": "The names \"Query\", \"Key\", \"Value\" are borrowed from database vocabulary. They give the impression that the model \"asks questions\" and \"searches for answers\". This is misleading.",
+        "description2": "In reality, Q, K, V are simply three matrix multiplications — three ways of projecting the same embedding vector into different spaces. Nothing more.",
+        "codeComment": "// What the model actually does:",
+        "qDescription": "just a linear projection (embedding × weight matrix)",
+        "kDescription": "just another linear projection (embedding × another matrix)",
+        "vDescription": "yet another linear projection (embedding × yet another matrix)",
+        "noOneDecided": "Nobody \"programmed\" Q to ask questions. ",
+        "backpropLabel": "Backpropagation",
+        "stepLink": "→ step 7",
+        "adjusts": " adjusts matrices W₁, W₂, W₃ so that ",
+        "mathWorks": "the math gives good predictions",
+        "noIntention": ". There is no semantic intention."
+      },
+      "whyThreeProjections": {
+        "title": "Why 3 projections and not 1, 2, or 4?",
+        "description": "It's an architectural choice guided by math, not semantics:",
+        "note": "3 projections is the minimum to decouple \"how to compute the weights\" and \"what to mix\". It's an empirical tradeoff validated by research results (paper \"Attention Is All You Need\", 2017).",
+        "oneProj": "1 projection",
+        "oneProjDescription": " Symmetric — if A is similar to B, then B is similar to A. You can't have asymmetric relations (e.g., \"t depends on c\" without \"c depends on t\").",
+        "twoProj": "2 projections",
+        "twoProjDescription": " Asymmetric — you can compute directional scores. But you mix the input vectors directly, not a transformed version.",
+        "threeProj": "3 projections",
+        "threeProjMix": "but you mix proj3 (not the raw input).",
+        "threeProjDescription": " You completely decouple \"how to compute the weights\" (Q, K) and \"what to mix\" (V). This is the",
+        "threeProjBold": "minimum to have this flexibility.",
+        "fourPlusProj": "4+ projections",
+        "fourPlusProjDescription": "tested by researchers, no significant improvement. 3 is the sweet spot."
+      },
+      "matricesOrigin": {
+        "title": "Where do the W_Q, W_K, W_V matrices come from?",
+        "description": "Like all Transformer matrices (embedding, FFN), these are learned parameters:",
+        "codeComment": "// For each token, 3 projections:",
+        "dimensionNote": "(64 → 16 dimensions)",
+        "lifecycleComment": "// Matrix lifecycle:",
+        "startLabel": "Start:",
+        "startDescription": "are randomly initialized. Attention is \"random\" — each token looks at others at random.",
+        "duringLabel": "During:",
+        "duringDescriptionBefore": "",
+        "backpropLabel": "Backpropagation",
+        "stepLink": "→ step 7",
+        "duringDescriptionAfter": "adjusts each value so that the \"right\" tokens receive more attention.",
+        "afterLabel": "After:",
+        "afterDescription": "the matrices encode which tokens are useful for predicting the next one. That is \"learned\" attention.",
+        "whyDimNote": "Why 64 → 16? Because our model has 4",
+        "headsLabel": "heads",
+        "dimExplanation": " and 64 / 4 = 16. Each head works in a 16-dimensional subspace."
+      },
+      "emergence": {
+        "title": "Emergence: \"semantics\" is not designed, it appears",
+        "description": "After training, if we observe the attention weights, we find that the model has discovered useful patterns:",
+        "conclusion": "These patterns resemble semantics. But the model doesn't \"know\" that it's grouping letters of a word. It simply found that these weight patterns minimize the prediction error. \"Semantics\" is a side effect of mathematical optimization — not a programmed objective.",
+        "pattern1Label": "Head 1:",
+        "pattern1": "adjacent tokens attend strongly to each other (local pattern)",
+        "pattern2Label": "Head 2:",
+        "pattern2": "letters of the same word group together (word pattern)",
+        "pattern3Label": "Head 3:",
+        "pattern3": "word beginnings attend to each other (structural pattern)"
+      },
+      "causalMask": {
+        "title": "The causal mask: no peeking at the future",
+        "description": "The model learns to predict the next token. If it could see future tokens, it would cheat. The causal mask sets the scores of future positions to −∞ before the softmax.",
+        "canSee": "\"t\" can see:"
+      },
+      "multiHead": {
+        "title": "Multiple heads: several projections in parallel",
+        "sameMatrices": {
+          "question": "Frequently asked question: do the 4 heads have the same matrices?",
+          "no": "No!",
+          "answerPart1": "Each head has its own W_Q, W_K, W_V with",
+          "answerBold1": "different random values at initialization",
+          "answerPart2": " Since they start from different points, backpropagation makes them converge to",
+          "answerBold2": "different solutions",
+          "answerPart3": "— each head learns a different type of relationship.",
+          "symmetryExplanation": "This is symmetry breaking: if all heads started identical, they would learn the same thing (same inputs → same gradients → same updates). Different random initialization is what enables diversity."
+        },
+        "parallel": {
+          "question": "Frequently asked question: does one head take the output of the previous one?",
+          "no": "No!",
+          "answerPart1": "The 4 heads work",
+          "answerBold": "in parallel, not in sequence",
+          "answerPart2": ". They all take the same input embedding and each produces a 16-dimensional result:"
+        },
+        "descriptionBefore": "A single set of W_Q, W_K, W_V matrices can only capture one type of relationship between tokens. Our mini-LLM uses 4",
+        "headsLabel": "heads",
+        "descriptionAfter": "— that is, 4 independent sets of matrices.",
+        "codeComment": "// 4 heads in parallel on the same embedding:",
+        "head": "Head",
+        "output": "output",
+        "concatComment": "// Concatenation + final projection:",
+        "finalOutput": "final output",
+        "subspaceExplanation": "Each head works in a 16-dimensional subspace. After concatenation (4 × 16 = 64), the W_O matrix (output projection) recombines these subspaces.",
+        "observedComment": "// What we observe after training:",
+        "head1Pattern": "seems to capture proximity relations (adjacent tokens)",
+        "head2Pattern": "seems to capture intra-word relations (letters of the same word)",
+        "head3Pattern": "seems to capture word-start relations (capitals, spaces)",
+        "head4Pattern": "seems to capture punctuation/structure patterns",
+        "emergenceNote": "These \"roles\" are not programmed — they emerge from training. Each run may produce different roles."
+      },
+      "summary": {
+        "title": "Summary",
+        "input": "Input: 7 × 64 matrix (embeddings + positions).",
+        "operation": "Operation: 4 heads compute in parallel Q×K^T → scores → softmax → weighting by V. The results are concatenated and projected by W_O.",
+        "output": "Output: 7 × 64 matrix — same shape, but each token is enriched with context from preceding tokens.",
+        "headsLabel": "4 heads × (Q·K → softmax → ×V)",
+        "plusResidual": "+ residual"
+      },
+      "deepDive": {
+        "title": "The attention formulas",
+        "concepts": {
+          "projections": {
+            "name": "Q, K, V Projections",
+            "explanation": "Three matrix multiplications to project embeddings into subspaces of dimension d_k = d_model / n_heads."
+          },
+          "scaledDotProduct": {
+            "name": "Scaled dot product",
+            "explanation": "The attention score is the dot product Q·K divided by √d_k to avoid overly large values that would saturate the softmax."
+          },
+          "multiHead": {
+            "name": "Multi-head attention",
+            "explanation": "Multiple attention heads in parallel, each with its own matrices. Results are concatenated and projected by W_O."
+          },
+          "causalMask": {
+            "name": "Causal mask",
+            "explanation": "Future positions are masked (−∞) to prevent the model from \"cheating\" by looking at tokens it needs to predict. After softmax, these positions have a weight of 0.",
+            "latexIf": "if"
+          }
+        }
+      }
+    },
+    "feedforward": {
+      "title": "Feed-Forward Network",
+      "subtitle": "Processing information",
+      "exampleContext": "After consulting the other tokens (attention), each token is processed individually by a small neural network.",
+      "problem": {
+        "title": "The problem: attention mixes, but doesn't \"understand\"",
+        "description": "The attention mechanism performs a weighted sum of V vectors — it's a blend. But a blend cannot create new knowledge.",
+        "analogy": "Imagine 5 people sharing their opinions during a meeting. If you average their views, you get a compromise — not a new idea.",
+        "analogyContinued": "To produce a new idea, you need individual reflection time after the meeting: \"Now that I've heard everyone, what do I conclude?\"",
+        "summary": "Attention = the meeting (collect info). The FFN = reflection time (transform info).",
+        "analogyLabel": "Analogy"
+      },
+      "solution": "The Feed-Forward Network (FFN) is a small neural network that processes each token individually. It doesn't mix tokens together — it transforms each token's vector into a new, \"smarter\" vector.",
+      "principle": {
+        "title": "The principle: expansion → activation → compression",
+        "description": "The FFN has exactly 2 linear layers with an activation in between:",
+        "labels": {
+          "input": "input",
+          "expansion": "expansion",
+          "output": "output"
+        },
+        "sameSize": "Input and output have the same size. The FFN doesn't change the \"shape\" of the data — it transforms their content.",
+        "realModelNote": "In a real LLM, the ratio is typically ×{{ratio}} ({{dModel}} → {{dFF}})."
+      },
+      "matricesOrigin": {
+        "title": "Where do the W₁ and W₂ matrices come from?",
+        "description": "Like the embedding matrices (step 2) and the Q, K, V matrices of attention (step 4), the W₁ and W₂ matrices are learned parameters.",
+        "atStart": "At the start: W₁ and W₂ are filled with random values. The FFN performs arbitrary transformations — it \"knows\" nothing.",
+        "duringTraining": "During training: backpropagation (→ step 7) adjusts each value of W₁ and W₂ to reduce the prediction error. Gradually, the FFN learns which transformations are useful.",
+        "afterTraining": "After training: W₁ and W₂ contain the model's \"knowledge\". They are what \"knows\" that after \"ch\" there should probably be \"a\" (→ chat) or \"e\" (→ cher).",
+        "samePrinciple": "// Same principle as attention:",
+        "paramSizeComment": "// Parameter sizes:",
+        "params": "parameters",
+        "values": "values",
+        "biasNote1": "(one per hidden neuron)",
+        "biasNote2": "(one per output dimension)",
+        "realModelParams": "In a real LLM (GPT-3), the FFN alone represents ~2/3 of total parameters."
+      },
+      "whyExpansion": {
+        "title": "Why expand and then shrink?",
+        "analogy": "To understand a text, you start by breaking it down into many observations (vocabulary, grammar, tone, intent, cultural context...) — that's the expansion.",
+        "analogySynthesis": "Then you synthesize all of that into a global understanding — that's the compression.",
+        "workingSpace": "The expanded space provides the necessary working room.",
+        "question": "We go from {{dModel}} dimensions to {{dFF}} (×{{ratio}})... why expand to then shrink back to {{dModel}}?",
+        "analogyLabel": "Decomposition analogy:"
+      },
+      "relu": {
+        "title": "ReLU: the filter that selects",
+        "description": "ReLU (Rectified Linear Unit) is ultra-simple: if the value is negative, replace it with 0. Otherwise, keep it.",
+        "positiveLabel": "positive: keep",
+        "negativeLabel": "negative: replaced by 0",
+        "role1": "Non-linearity: without ReLU, stacking two matrix multiplications (W₁ then W₂) would be mathematically equivalent to a single multiplication. The network couldn't learn anything more than a single layer.",
+        "role2": "Selection: by setting ~50% of neurons to 0, ReLU creates a unique \"activation pattern\" for each token. It's like a filter that only keeps the relevant dimensions.",
+        "twoRoles": "ReLU plays two essential roles:"
+      },
+      "infoLossQuestion": {
+        "title": "The key question: don't all these transformations lose information?",
+        "description": "This is the most legitimate question. Since step 2, each token has undergone successive matrix multiplications: embedding → positional → attention → FFN. Each transformation could theoretically distort or destroy information.",
+        "answer": "The answer lies in a fundamental concept: the residual connection."
+      },
+      "residualConnection": {
+        "title": "The residual connection: the safety net",
+        "description": "The Transformer never uses the FFN (or attention) output directly. It always does:",
+        "formula": "output = input + transformation(input)",
+        "explanation": "The original vector is always preserved. The transformation only adds something on top. If the transformation is bad (values close to 0), the original vector passes through intact.",
+        "analogy": "Imagine you're reading a book and taking notes in the margin. Your notes enrich the text — but the original text is never erased. If your notes are bad, the original text is still there.",
+        "attentionAdds": "Attention adds its \"notes\" (the context) to the original vector",
+        "ffnAdds": "The FFN adds its \"notes\" (the conclusions) to the already-enriched vector",
+        "eachLayerAdds": "Each layer adds an additional \"layer of notes\"",
+        "conclusion": "→ The original information (the embedding + the position) is never lost. It travels through the entire network end to end.",
+        "analogyLabel": "Margin notes analogy:"
+      },
+      "fullFlow": {
+        "title": "The complete flow in a Transformer layer",
+        "step1Comment": "← mixing with other tokens + residual",
+        "step2Comment": "← individual reflection + residual",
+        "note": "At each layer, the vector is enriched without ever losing what was acquired before. This is what allows stacking 4, 12, or 96 layers without the information degrading.",
+        "descriptionBefore": "Here is what happens in a",
+        "layerLabel": "layer",
+        "descriptionAfter": "complete Transformer:",
+        "nextLayerComment": "// → x₂ passes to the next layer (same operations, new matrices)"
+      },
+      "calculation": {
+        "title": "Concrete example with \"The cat\" (the 7 tokens)",
+        "description": "Let's follow the complete FFN computation, from the residual after attention to the final output.",
+        "step0Title": "Step 0: FFN input — residual after attention",
+        "step0Description": "The FFN input vector is the embedding + the attention output (residual connection). Each token retains its original information enriched with context.",
+        "step0Result": "→ 7 enriched vectors. Each contains the identity + the position + the attention context. This vector will be preserved thanks to the FFN's residual connection.",
+        "step1Title": "Step 1: Expansion via W₁ — token \"t\"",
+        "step1Description": "The vector is multiplied by the learned matrix W₁ then bias b₁ is added. We \"expand\" the vector into additional dimensions to analyze more aspects.",
+        "step2Title": "Step 2: ReLU activation — token \"t\"",
+        "step2Description": "We set all negative values to zero. This is the \"filter\" that selects relevant dimensions.",
+        "step2ResultNeurons": "neurons turned off",
+        "step2ResultActive": "active",
+        "step2ResultNote": "will contribute to the compression. This pattern is unique for each token.",
+        "step3Title": "Step 3: Compression via W₂ — token \"t\"",
+        "step3Description": "The filtered result is multiplied by learned W₂ to return to the original dimensions. Turned-off neurons (= 0) do not contribute to the result.",
+        "step3DetailNote": "Turned-off neurons (ReLU=0) are ignored — only active ones contribute.",
+        "step4Title": "Step 4: Residual connection — we add, we don't replace!",
+        "step4Description": "This is the crucial step. We add the FFN output to the input vector: output = x + FFN(x). The original information is preserved.",
+        "step4Result": "→ 7 enriched vectors. The original information (embedding + position + context) is preserved. The FFN only made \"adjustments\" on top.",
+        "diagramTitle": "Feed-Forward Network architecture",
+        "diagramDescription": "Interactive visualization of the expansion and compression.",
+        "matrixRecallLink": "(recall: matrix product)",
+        "w1Title": "Matrix W₁",
+        "beforeRelu": "Before ReLU (h)",
+        "afterRelu": "After ReLU",
+        "w2Title": "Matrix W₂",
+        "inputVectorLabel": "x (token \"t\"):",
+        "reluVectorLabel": "ReLU(h) (token \"t\"):"
+      },
+      "summary": {
+        "title": "Summary",
+        "inputLabel": "Input (residual after attention)",
+        "inputDescription": "= embedding + attention output. Contains the identity + the position + the context.",
+        "operationLabel": "Operation (3 sub-steps + residual)",
+        "step1Label": "Expansion via W₁ + b₁",
+        "step2Label": "ReLU — negatives → 0",
+        "step3Label": "Compression via W₂ + b₂",
+        "step4Label": "Residual connection",
+        "outputLabel": "Output",
+        "outputNote": "original + adjustment",
+        "formulaNote": "The Attention + residual → FFN + residual pattern repeats in each layer.",
+        "learnedBadge": "all learned",
+        "extinguished": "extinguished",
+        "outputFormula": "output",
+        "allLearned": "all learned by backpropagation",
+        "tokenLabel": "\"",
+        "tokenLabelEnd": "\""
+      },
+      "deepDive": {
+        "title": "The FFN and residual connection formulas",
+        "ffn": {
+          "name": "Feed-Forward Network",
+          "explanation": "W₁ expands the vector, ReLU removes the negatives, W₂ compresses."
+        },
+        "residual": {
+          "name": "Residual connection + LayerNorm",
+          "explanation": "The FFN output is ADDED to the input vector (residual connection). LayerNorm normalizes the vectors before each sub-layer to stabilize training. Thanks to the residual, the gradient can traverse the entire network without vanishing — this is what allows stacking dozens of layers."
+        },
+        "reluFormula": {
+          "name": "ReLU",
+          "explanation": "Activation function that introduces the necessary non-linearity. Without it, two consecutive linear layers would be equivalent to a single linear layer. Modern variants (GELU in GPT, SiLU in LLaMA) are smoother but the principle is identical."
+        },
+        "transformerBlock": {
+          "name": "Complete Transformer block",
+          "explanation": "One Transformer layer = Attention with residual + FFN with residual. The original information x traverses the entire block unmodified, enriched by the two \"margin notes\" (attention and FFN)."
+        }
+      }
+    },
+    "loss": {
+      "title": "Loss Computation",
+      "subtitle": "Measuring progress",
+      "exampleContext": "The model trains on \"The cat\" — it must predict each token one by one.",
+      "problem": {
+        "title": "The problem: how do we know if the model is learning?",
+        "description1": "The model has traversed all the layers (embedding → attention → FFN). At the output, it produces probabilities for each possible token in the vocabulary. But are these probabilities any good?",
+        "description2": "We need a single number that says \"how wrong the model is\". This number — the loss — is what the entire training process will try to minimize."
+      },
+      "algorithm": {
+        "title": "The algorithm: how a sentence becomes exercises",
+        "description1": "When we give \"The cat\" to the model for training, we don't just tell it \"learn this sentence\". We break it down into prediction exercises.",
+        "description2": "The principle: at each position, the model sees everything before it and must guess the next token. It's like a multiple-choice quiz with 7 possible answers (our vocabulary of 7 tokens).",
+        "exerciseComment": "\"The cat\" = 7 tokens → 6 prediction exercises",
+        "note": "A single sentence = 6 exercises. Each exercise has its own score (loss). The total loss for the sentence = the average of the 6 scores."
+      },
+      "targetOrigin": {
+        "title": "Where does the target come from? From the text itself.",
+        "description": "The model receives no external answers. The target is simply the next token in the training text. We know the answer because we have the complete text! The trick: the input and the target are the same text, shifted by one position.",
+        "tableHeaders": {
+          "position": "position",
+          "input": "input",
+          "target": "target"
+        },
+        "note": "Each column is an exercise: the model sees the input and must predict the target. 7 tokens = 6 training pairs, automatically extracted from the text."
+      },
+      "millionsOfTexts": {
+        "title": "But with millions of texts?",
+        "description": "After \"ch\", the model will see texts with different continuations:",
+        "averaging": "Each example pushes the model in a different direction. Over thousands of examples, these signals average out and the model learns the true distribution: after \"ch\", P(a) ≈ 55%, P(e) ≈ 20%, P(o) ≈ 10%...",
+        "contextNote": "The longer the context, the more precise the prediction. \"ch → ?\" is ambiguous, but \"the domestic animal, the ch → ?\" clearly points to \"a\" (chat). This is what the attention mechanism is for: looking at all the preceding context."
+      },
+      "howLossCalculated": {
+        "title": "How is the loss calculated exactly?",
+        "description": "Let's take the exercise \"The ca → ?\". The model gives a probability for each of the 7 tokens in the vocabulary. The loss measures how wrong it is — it's a single number computed from the probability of the correct token.",
+        "calculationNote": "The \"Concrete computation\" section below details each step with the actual numbers from our example."
+      },
+      "totalLoss": {
+        "title": "The total loss: the average of all exercises",
+        "description": "Each position gives an individual loss. The total loss for the sentence = the average of all these individual losses.",
+        "formulaComment": "Average of the 6 individual losses",
+        "summary": "This single number summarizes the model's performance on the entire sentence. The goal of training: reduce this number."
+      },
+      "multipleSentences": {
+        "title": "What about multiple sentences?",
+        "description": "In practice, the model trains on many sentences (a text corpus). The process is the same:",
+        "sentence1": "\"The cat\": average loss = {{loss}}",
+        "sentence2": "\"The sun\": average loss = 1.83",
+        "sentence3": "\"Hello\": average loss = 1.45",
+        "batchLossComment": "Batch loss = average of each sentence's loss",
+        "note": "The more different sentences the model sees, the more varied patterns it learns. The \"e\" following \"Th\" and the \"a\" following \"ch\" both help it better understand when these tokens are likely."
+      },
+      "calculation": {
+        "zoomTitle": "Zoom on one exercise: \"The ca\" → \"t\"",
+        "zoomDescription": "The model assigns a probability to each token. The green bar = the correct token.",
+        "sixExercisesTitle": "The 6 exercises of \"The cat\"",
+        "sixExercisesDescription": "Each row = one position. The model sees the context and must predict the next token.",
+        "tableHeaders": {
+          "exercise": "#",
+          "context": "The model sees...",
+          "predict": "Must predict",
+          "pGood": "P(correct)",
+          "loss": "Loss"
+        },
+        "footerLabel": "Average loss (6 exercises) =",
+        "legendEasy": "Easy (loss < 0.5)",
+        "legendHard": "Hard (loss > 2.0)",
+        "legendDetailed": "Exercise detailed below",
+        "observations": {
+          "title": "What we observe:",
+          "hardest": "The hardest position is after the space (position 2, loss = 2.53) — many possible letters to start a word.",
+          "easiest": "The easiest position is \"The c → a\" (position 4, loss = 0.60) — \"ca\" is a very common start (cat, can, car...).",
+          "detailed": "The detailed exercise: position 5, \"The ca → t\" (loss = 0.87). The model hesitates a bit — the complete computation is below."
+        },
+        "evolutionTitle": "How loss evolves during training",
+        "evolutionDescription": "Over iterations, the model assigns more and more probability to the correct tokens.",
+        "evolutionSteps": {
+          "start": "The model guesses randomly (1/7 ≈ 14%)",
+          "iter100": "It starts learning the frequencies",
+          "iter500": "It recognizes common patterns",
+          "iter2000": "It masters most predictions",
+          "iter5000": "Nearly perfect on the seen data"
+        },
+        "evolutionEpochs": {
+          "start": "Start (t=0)",
+          "iter100": "100 iterations",
+          "iter500": "500 iterations",
+          "iter2000": "2,000 iterations",
+          "iter5000": "5,000 iterations"
+        },
+        "evolutionBarGood": "good",
+        "evolutionNote": "The loss goes from ~2.0 (random) to ~0.08 (near-perfect). Each iteration reduces the error a little.",
+        "pipelineTitle": "Pipeline for one exercise",
+        "pipelineDescription": "Each exercise follows the same path. Here are the steps for \"The ca → t\" (exercise 6):",
+        "pipelineLabels": {
+          "ffnOutput": "FFN Output",
+          "logits": "Logits",
+          "logitsSubtitle": "raw scores",
+          "probabilities": "Probabilities",
+          "probabilitiesSubtitle": "values (Σ = 100%)",
+          "loss": "Loss",
+          "lossSubtitle": "1 value",
+          "gradient": "Gradient",
+          "retropropagation": "→ Backpropagation",
+          "retropropagationNote": "(step 7: adjust W_out, W₂, W₁, W_Q, W_K, W_V, embeddings)",
+          "values": "values",
+          "goodToken": "correct token",
+          "gradientFormula": "∂Loss/∂logits = P − one_hot"
+        },
+        "pipelineNote": "This pipeline is executed for each of the 6 exercises of \"The cat\". The detailed computation for exercise 6 follows below.",
+        "concreteTitle": "Concrete computation: \"The ca → t\"",
+        "concreteDescription": "Let's take exercise 6: the model sees \"The ca\" and must predict \"t\". It has traversed all layers (embedding → attention → FFN). Let's follow the error computation.",
+        "logitsTitle": "First: the logits — one score per token",
+        "logitsDescription1": "At the output of the FFN, the model has a vector for position 5 (token \"a\"). To get one score per vocabulary token, this vector is multiplied by a matrix W_out. Each column of W_out is the learned \"template\" for a token.",
+        "logitsDescription2": "The result: 7 logits (raw scores). A logit is not a probability — it can be negative and the logits don't sum to 1. The higher the logit, the more the model \"votes\" for that token.",
+        "logitsSorted": "Ranking (from highest to lowest):",
+        "wOutTitle": "Matrix W_out",
+        "ffnOutputLabel": "FFN Output (position 5)",
+        "logitsEquation": "Logits = FFN × W_out",
+        "logitsOutputLabel": "Output: {{count}} logits (raw scores)",
+        "logitsNotProbabilities": "These are not probabilities — they can be negative and don't sum to 1.",
+        "logitsRawScores": "logits (raw scores)",
+        "logitsSortNote": "\"t\" has the highest logit (1.50). But how much more probable is it? To find out → softmax.",
+        "softmaxTitle": "Step 1: Softmax — logits → probabilities",
+        "softmaxDescription": "Each vocabulary token receives a raw score (logit). Softmax transforms them into probabilities that sum to 100%: for each logit, we compute exp(logit) / sum of all exp.",
+        "softmaxNote": "The model gives 42% to \"t\" — it's the most probable token, but it's not 100% sure.",
+        "softmaxOutputLabel": "Output: {{count}} probabilities (Σ = 100%)",
+        "crossEntropyTitle": "Step 2: Cross-Entropy Loss — measuring the error",
+        "crossEntropyDescription": "The loss depends on only one value: the probability that the model assigned to the correct token. The formula is: Loss = −log(P(correct token)).",
+        "crossEntropyWhy": "Why the logarithm? It has a perfect property: 100% sure → loss = 0, hesitates at 1% → loss = 4.6. The log exponentially penalizes low probabilities.",
+        "crossEntropyExamples": {
+          "perfect": "← perfect",
+          "ourCase": "← our case",
+          "random": "← random (1/7)",
+          "veryBad": "← very bad"
+        },
+        "crossEntropyIf": "If",
+        "crossEntropyGood": "correct",
+        "crossEntropyOurModel": "Our model: P(t) = 42% → Loss = 0.87. Neither perfect nor catastrophic — it still has room to improve.",
+        "lossOutputLabel": "Output: loss (1 value)",
+        "crossEntropyResult": "A single number summarizing \"how wrong the model was\" at this position.",
+        "gradientTitle": "Step 3: Gradient — the learning signal",
+        "gradientDescription": "The correct answer is encoded as a one-hot vector: a vector of 7 slots with a single 1 at the position of the correct token. The gradient = softmax − one_hot indicates in which direction to adjust each score.",
+        "gradientOneHotComment": "Correct answer = \"t\". One-hot vector:",
+        "gradientIncreaseTarget": "← increase the score for \"t\"",
+        "gradientStrongest": "Strongest signal: \"t\" (−0.58) → the model must significantly increase the score for \"t\".",
+        "gradientSecond": "Second signals: \"e\" (+0.18), \" \" (+0.15) → decrease because too probable.",
+        "gradientOutputLabel": "Output: gradient vector",
+        "gradientRetropropNote": "This gradient is the starting point of backpropagation (→ step 7), which will trace back through FFN → Attention → Embedding to adjust all weights."
+      },
+      "batchTitle": "From one exercise to the full batch",
+      "batchDescription": "Exercise 6 that we just detailed is only one of the 6. Each exercise produces its own loss and its own gradient.",
+      "batchTableHeaders": {
+        "exercise": "#",
+        "context": "Exercise",
+        "loss": "Loss",
+        "dominantGradient": "Dominant gradient"
+      },
+      "batchNote": "Each row = an exercise with its loss and its gradient (7 values). The dominant gradient is always that of the correct token (negative = its probability needs to increase).",
+      "aggregation": {
+        "title": "Aggregation: from batch to single signal",
+        "lossComment": "Global loss = average of the 6 losses",
+        "gradientComment": "Accumulated gradient = average of the 6 gradients",
+        "gradientNote": "Each gradient has {{count}} components — one per vocabulary token.",
+        "note": "We accumulate the gradients from all exercises before making a single weight update. This is more stable than updating after each exercise — contradictory signals cancel out."
+      },
+      "afterTitle": "What's next? → Backpropagation",
+      "afterDescription": "This accumulated gradient is the starting point of step 7. It traces back layer by layer to adjust all learned parameters:",
+      "afterChain": {
+        "accumulated": "accumulated gradient",
+        "adjustWout": "adjusts W_out",
+        "adjustFFN": "adjusts W₂, W₁",
+        "adjustAttention": "adjusts W_Q, W_K, W_V",
+        "adjustEmbeddings": "adjusts Embeddings"
+      },
+      "afterLoop": "→ New batch → new loss (lower) → new gradient → ...",
+      "afterLink": "→ Step 7: Backpropagation",
+      "afterLinkSuffix": "to see how these gradients flow back layer by layer.",
+      "data": {
+        "note_pos2": "many possible letters after a space",
+        "note_pos4": "\"ca\" is a very common start",
+        "note_pos5": "our detailed exercise"
+      },
+      "annotations": {
+        "correctToken": "← correct token",
+        "increase": "↑ increase",
+        "decrease": "↓ decrease",
+        "decreaseArrow": "↓"
+      },
+      "summary": {
+        "title": "Summary",
+        "inputLabel": "Input",
+        "inputDescription": "\"The cat\" = 7 tokens → 6 exercises (context/target pairs)",
+        "inputFFN": "Each exercise receives an FFN vector of {{count}} dimensions as input.",
+        "perExerciseLabel": "Per exercise",
+        "perExerciseDescription": "FFN output × W_out → 7 logits → softmax → 7 probabilities → loss = −log(P(correct token)) → gradient = probabilities − one_hot",
+        "perExerciseStep1": "FFN × W_out → {{count}} logits (raw scores)",
+        "perExerciseStep2": "softmax → probabilities (Σ = 100%)",
+        "perExerciseStep3": "loss = −log(P(correct token)), gradient = P − one_hot ({{count}} values)",
+        "aggregationLabel": "Aggregation (over the batch)",
+        "aggregationLoss": "Global loss = average = {{loss}}",
+        "aggregationGradient": "Accumulated gradient = average of 6 gradients ({{count}} values each)",
+        "outputLabel": "Output → step 7",
+        "outputLoss": "Global loss: a single number measuring the model's error",
+        "outputGradient": "Accumulated gradient: the signal that will flow back during backpropagation",
+        "outputNote": "the gradient flows back layer by layer to adjust W_out, W₂, W₁, W_Q, W_K, W_V and the embeddings."
+      },
+      "deepDive": {
+        "title": "The Cross-Entropy formula",
+        "crossEntropy": {
+          "name": "Cross-Entropy Loss (one position)",
+          "explanation": "For position i, we take the negative log of the probability assigned to the true token, given all the preceding context. The log makes very low probabilities → very high loss (exponential penalty)."
+        },
+        "averageLoss": {
+          "name": "Average loss over the sequence",
+          "explanation": "We average the loss at each position. N = number of predicted positions (= sequence length − 1). For \"The cat\" (7 tokens), N = 6. Minimizing L amounts to maximizing the probability of each true token."
+        },
+        "perplexity": {
+          "name": "Perplexity",
+          "explanation": "Perplexity is the exponential of the loss. It can be interpreted as \"the number of choices the model hesitates between on average\". PPL = 1 → no hesitation. PPL = 7 → it hesitates between 7 tokens (pure chance with vocab_size=7). PPL = 2.7 → it hesitates between ~3 tokens per position."
+        }
+      }
+    },
+    "backpropagation": {
+      "title": "Backpropagation",
+      "subtitle": "Correcting errors",
+      "exampleContext": "Gradients flow backward through the network to tell each weight how to correct itself.",
+      "problem": {
+        "title": "The problem: who is responsible for the error?",
+        "description1": "We know the model is wrong (the loss tells us). But the model has thousands of weights spread across many layers (embedding, attention, FFN...).",
+        "description2": "Which one should we correct? And by how much? We can't modify weights randomly — that would make the model even worse. We need a systematic way to calculate each weight's responsibility in the final error."
+      },
+      "idea": "Backpropagation solves this problem: it computes, for each weight, a number called a gradient that indicates \"in which direction and by how much to adjust this weight to reduce the error\".",
+      "investigationAnalogy": {
+        "title": "The backward investigation analogy",
+        "description": "Imagine a chain collision on a highway. An investigator traces the chain from the end:",
+        "step1": "The accident (loss): the model predicted \"n\" instead of \"t\" → error of 0.87",
+        "step2": "Direct cause (output): the output layer gave scores too high for \"n\"",
+        "step3": "Intermediate cause (FFN): the FFN transmitted a vector that favored \"n\"",
+        "step4": "Deeper cause (attention): the attention didn't look enough at the context \"cha\"",
+        "step5": "Root cause (embedding): the vectors for \"c\", \"h\", \"a\" were not informative enough",
+        "note": "At each step, we quantify each weight's share of responsibility. This is the chain rule of differential calculus."
+      },
+      "gradient": {
+        "title": "What is a gradient, concretely?",
+        "description": "A gradient is a number that answers a simple question:",
+        "question": "\"If I modify this weight by a tiny amount, does the error increase or decrease? And by how much?\"",
+        "slopeAnalogy": "It's the slope of the terrain under our feet. Imagine the loss is the altitude and each weight is a direction in which we can move:",
+        "readingSummary": "Summary: how to read a gradient",
+        "positiveGrad": "+0.3 (positive) → the weight pushes the error up → decrease the weight",
+        "negativeGrad": "−0.3 (negative) → the weight pulls the error down → increase the weight",
+        "largeGrad": "±1.5 (large value) → this weight has a lot of influence → large adjustment",
+        "smallGrad": "±0.001 (small) → this weight has almost no influence → small adjustment"
+      },
+      "chainRule": {
+        "title": "How is the gradient computed from the loss?",
+        "description": "In theory, we could test each weight one by one (as above). But with ~50,000 weights, that would be 50,000 tests! Backpropagation computes all gradients in a single backward pass, thanks to the chain rule.",
+        "cascade": "It's like a cascade of dominoes: the error at the end of the chain \"propagates\" backward, and each layer passes its share of responsibility to the previous layer."
+      },
+      "vanishingGradient": {
+        "title": "The vanishing gradient problem",
+        "description": "At each layer traversed, the gradient is multiplied by that layer's weights. With many layers, the gradient can become tiny (vanishes) or huge (explodes).",
+        "solution": "Residual connections (x + f(x)) solve this problem: they create a \"shortcut\" that allows gradients to flow directly, without being degraded by intermediate layers."
+      }
+    },
+    "optimizer": {
+      "title": "Optimizer (Adam)",
+      "subtitle": "Updating the weights",
+      "exampleContext": "The optimizer uses the gradients to intelligently adjust each weight of the model.",
+      "problem": {
+        "title": "Naive gradient descent is not enough",
+        "description": "Backpropagation gives us a gradient for each weight. The simplest approach would be: W = W − lr × gradient. But this naive approach has several problems:",
+        "problem1": "The gradient is noisy. Each batch gives a slightly different gradient. The update zigzags instead of going straight to the goal.",
+        "problem2": "Some weights have huge gradients, others tiny ones. A single learning rate doesn't suit all.",
+        "problem3": "The error landscape has narrow valleys. A step too large makes it \"bounce\" from side to side without making progress."
+      },
+      "idea": "The Adam optimizer solves these three problems. It is smarter than a simple subtraction because it adapts the learning rate for each weight individually, and uses the history of past gradients.",
+      "ballAnalogy": {
+        "title": "The ball-in-a-landscape analogy",
+        "description": "Imagine you're looking for the lowest point of a mountainous landscape (the error minimum), by dropping a ball on the surface:",
+        "naive": "The ball has no momentum — it follows exactly the local slope. It oscillates in valleys and can get stuck in a shallow dip.",
+        "adam": "The ball has momentum — it accumulates speed in the persistent direction and ignores small perturbations. Furthermore, it adapts its speed: it accelerates on gentle descents and slows down on steep slopes."
+      },
+      "twoMemories": {
+        "title": "Adam's two \"memories\"",
+        "description": "For each weight in the model, Adam maintains two additional values:",
+        "momentum": {
+          "title": "m — Momentum",
+          "description": "Moving average of past gradients. If the gradient consistently points in the same direction, m grows → the ball accelerates. If the gradient oscillates, m stays small → the ball moves gently.",
+          "beta1Note": "β₁ = 0.9: retains 90% of the previous momentum"
+        },
+        "velocity": {
+          "title": "v — Adaptive speed",
+          "description": "Moving average of squared gradients (always positive). If a weight has very large gradients, √v is large → we divide by √v → we slow down. If the gradients are small → we speed up.",
+          "beta2Note": "β₂ = 0.999: very long memory"
+        }
+      },
+      "learningRate": {
+        "title": "The learning rate: not too large, not too small",
+        "tooLarge": "α = 0.1 → too large: the model diverges (the error explodes)",
+        "good": "α = 0.001 → good tradeoff: stable progress",
+        "tooSmall": "α = 0.000001 → too small: training takes forever"
+      },
+      "calculation": {
+        "step1Title": "Step 1: Update momentum (m)",
+        "step1Description": "Momentum accumulates the direction of past gradients. At t=1, m starts from 0.",
+        "step2Title": "Step 2: Update adaptive speed (v)",
+        "step2Description": "v captures the magnitude of gradients (always positive thanks to the square).",
+        "step3Title": "Step 3: Bias correction",
+        "step3Description": "At t=1, m and v are underestimated because they were initialized to 0. We correct by dividing by (1−β^t).",
+        "step4Title": "Step 4: Update the weight",
+        "step4Description": "We combine everything: the weight is adjusted with the momentum normalized by the adaptive speed.",
+        "momentumActionTitle": "Momentum in action: 3 iterations",
+        "vizTitle": "Adam pipeline visualization",
+        "vizDescription": "Here is the complete flow for one weight: gradient → momentum → adapter → correction.",
+        "gradientRecapTitle": "Input: gradients from ",
+        "gradientRecapTitleLink": "step 7 (backpropagation)",
+        "gradientRecapDescription": "Backpropagation computed a gradient for each weight. Let's take 3 representative examples:",
+        "gradientRecapTableWeight": "weight",
+        "gradientRecapTableValue": "current value",
+        "gradientRecapTableGradient": "gradient",
+        "gradientRecapTableInterpretation": "interpretation",
+        "gradientRecapIncrease": "increase",
+        "gradientRecapDecrease": "decrease",
+        "gradientRecapNote": "The 3 gradients are <strong>negative</strong> for the first two (these weights need to increase to favor \"t\"). The magnitude varies from <span>0.19</span> to <span>0.89</span> — a factor of <strong>×4.6</strong>.",
+        "hyperparamsTitle": "Adam hyperparameters (standard values)",
+        "hyperparamsLr": "(lr)",
+        "hyperparamsMomentum": "(momentum)",
+        "hyperparamsAdapter": "(adapter)",
+        "hyperparamsStability": "(stability)",
+        "hyperparamsFirstIter": "(1st iteration, m₀=0, v₀=0)",
+        "step1OutputLabel": "Output: momentum (m)",
+        "step1LargeGradient": "large gradient → large m",
+        "step1SmallGradient": "small gradient → small m",
+        "step2OutputLabel": "Output: adaptive speed (v)",
+        "step2StrongGradient": "strong",
+        "step2WeakGradient": "weak",
+        "step2LargeV": "large",
+        "step2SmallV": "small",
+        "step2Note": "v is proportional to g²: weights with a strong gradient will have a larger v → Adam will slow them down.",
+        "step3BiasExplanation": "Why? At t=1, m = 0.1×g (instead of g). Dividing by 0.1 restores the real scale. As t increases, (1−β^t) → 1 and the correction vanishes.",
+        "step3ObservationTitle": "Key observation: √v̂ ≈ |g|",
+        "step3ObservationNote": "At t=1, √v̂ ≈ |g| exactly. This is the key: when we divide m̂ by √v̂, the gradient's magnitude cancels out!",
+        "step4Increased": "increased",
+        "step4Decreased": "decreased",
+        "step4OutputLabel": "Output: corrected weights",
+        "step4MagicTitle": "The magic of Adam: automatic normalization",
+        "step4MagicNote": "Despite gradients ranging from <span>0.19</span> to <span>0.89</span> (factor ×4.6), all weights receive the <strong>same correction ≈ {{lr}}</strong>. This is because m̂/√v̂ ≈ ±1 (the sign of the gradient, without the magnitude).",
+        "step4NaiveNote": "<strong>Naive descent</strong> (W − lr × g) would give corrections from 0.0002 to 0.0009: large gradients would crush small ones. Adam ensures that <strong>each weight advances at the same pace</strong>.",
+        "momentumActionDescription": "Let's follow {{name}} over 3 successive batches. The gradient changes with each batch.",
+        "momentumExplanation": "Momentum <span>m</span> accumulates past gradients. When a batch gives an <strong>opposite</strong> gradient (noise), momentum absorbs the shock and stays on course.",
+        "iterationLabel": "Iteration",
+        "slowedButNegative": "slowed, but stays negative",
+        "momentumOverridePrefix": "The gradient says \"go back\" (+0.15), but momentum (m=",
+        "momentumOverrideSuffix": ") says \"keep going!\". Adam ignores the momentary noise.",
+        "comparisonTitle": "Comparison after 3 iterations:",
+        "comparisonTableIteration": "iteration",
+        "comparisonTableGradient": "gradient",
+        "comparisonTableAdam": "Adam",
+        "comparisonTableNaive": "naive",
+        "comparisonNote": "At t=3, naive gradient <span>goes back</span> (0.8316 → 0.8315) while Adam <span>keeps advancing</span> (0.8320 → 0.8327). Over thousands of iterations, this effect accumulates considerably."
+      },
+      "summary": {
+        "title": "Summary",
+        "inputLabel": "Input (output of step 7)",
+        "operationLabel": "Operation — Adam (4 sub-steps)",
+        "outputLabel": "Output — updated weights",
+        "note": "After this update, we start again: forward pass → loss → backprop → Adam. This is the training loop, repeated thousands of times. With each pass, the weights improve a little more.",
+        "weightCount": "× ~50,000 weights — each with its own gradient.",
+        "operationStep1Note": "direction (momentum)",
+        "operationStep2Note": "magnitude (adapter)",
+        "operationStep3Note": "bias correction",
+        "operationStep4Note": "update"
+      },
+      "deepDive": {
+        "title": "Adam formulas",
+        "formulas": {
+          "momentsName": "Moment updates",
+          "momentsExplanation": "m is the moving average of the gradient (direction), v is the moving average of gradient² (magnitude). β₁ = 0.9 → m changes fairly quickly. β₂ = 0.999 → v is very stable (long memory).",
+          "biasName": "Bias correction",
+          "biasExplanation": "At the start (small t), m and v are initialized to 0 and therefore underestimate the true values. Dividing by (1−β^t) corrects this bias. When t is large, (1−β^t) ≈ 1 and the correction vanishes.",
+          "updateName": "Weight update",
+          "updateExplanation": "The weight is adjusted proportionally to the direction (m̂) and inversely to the magnitude (√v̂). α = learning rate (typically 0.001). ε = 10⁻⁸ for numerical stability. Each weight has its own \"effective speed\" = α/√v̂."
+        }
+      }
+    },
+    "recap": {
+      "title": "Training Recap",
+      "subtitle": "The complete pipeline, step by step",
+      "badge": "TRAINING — RECAP",
+      "heading": "The complete pipeline, step by step",
+      "description": "Let's follow the complete path of a token through the Transformer during training. We will trace the journey of \"The ca\" to predict the next token \"t\".",
+      "input": {
+        "title": "The training input",
+        "description": "Training starts with raw text. Our model receives:",
+        "exerciseCount": "7 tokens = 6 prediction exercises",
+        "note": "The model's goal: at each position, predict the next token. We will follow exercise position 5: the model sees \"The ca\" and must predict \"t\"."
+      },
+      "dataPreparation": {
+        "title": "Data preparation: from raw text to training pairs",
+        "description": "Before launching training, we transform the raw text into input/target pairs. The model learns by predicting the next token at each position.",
+        "shiftComment": "Shifted by one position: input and target are the same text, offset",
+        "tableHeaders": {
+          "position": "position",
+          "input": "input",
+          "target": "target"
+        },
+        "pairCount": "7 tokens → 6 training pairs",
+        "windowsComment": "For long text: fixed-size windows (e.g., 64 tokens)",
+        "batchComment": "Forming batches (e.g., batch_size = 16)",
+        "batchDetails": {
+          "windows": "Text of 10,000 tokens → 156 windows of 64 tokens each",
+          "pairsPerWindow": "Each window → 63 input/target pairs",
+          "totalPairs": "Total: 156 × 63 = ~9,800 training pairs",
+          "parallel": "We take 16 windows in parallel",
+          "predictionsPerStep": "→ 16 × 63 = 1,008 predictions per training step"
+        },
+        "flowLabels": {
+          "rawText": "Raw text",
+          "tokenization": "Tokenization",
+          "windows": "Windows",
+          "batches": "Batches",
+          "training": "Training"
+        },
+        "dataFlowTitle": "Data preparation flow:"
+      },
+      "batchSizeAndEpochs": {
+        "title": "Batch size and epochs: how the model goes through the data",
+        "whyNotAll": {
+          "title": "Why not process everything at once?",
+          "description": "Two reasons: GPU memory is limited, and more importantly, correcting often is better than correcting rarely.",
+          "comparison": "With batches of 16, the model makes 625 updates over 10,000 windows. In one shot, it would only make one — with the same total computation."
+        },
+        "batchSizeImpact": {
+          "title": "The impact of batch size on learning",
+          "description": "Batch size doesn't just change the speed — it changes how the model learns and therefore how it will respond:",
+          "small": {
+            "label": "Small batch (8-16)",
+            "description": "Noisy learning, zigzagging. The gradient changes a lot from one batch to another.",
+            "result": "→ Good generalization, more \"creative\" responses but sometimes incoherent."
+          },
+          "medium": {
+            "label": "Medium batch (32-256) — the most common",
+            "description": "Good tradeoff between exploration and stability.",
+            "result": "→ The default choice for most models."
+          },
+          "large": {
+            "label": "Large batch (4096+)",
+            "description": "Precise learning, in a straight line. The gradient is very stable.",
+            "result": "→ Risk of memorizing the data, more \"rigid\" and repetitive responses."
+          },
+          "analogy": "Analogy: asking 3 passersby for directions (noisy but varied) vs 500 passersby (precise but everyone says the same thing)."
+        },
+        "epochs": {
+          "title": "Epochs: going through the data again",
+          "description": "One epoch = the model has seen all training windows once. In practice, we run multiple epochs (2 to 10) so the model can refine its knowledge.",
+          "epoch1": "Epoch 1: average loss ≈ 2.5 ← the model is discovering",
+          "epoch2": "Epoch 2: average loss ≈ 1.8 ← it recognizes patterns",
+          "epoch3": "Epoch 3: average loss ≈ 1.2 ← it masters most of them",
+          "warning": "Warning: too many epochs → the model memorizes instead of generalizing"
+        },
+        "randomSampling": {
+          "title": "Random data reading: why it's essential",
+          "description": "At each batch, the model picks a window at a random position in the corpus — it never reads the data in the same order. This is a fundamental principle of LLM training.",
+          "sequential": {
+            "label": "Without shuffling (sequential)",
+            "description": "The model always sees sentences in the same order. It over-learns the first sentences and neglects the rest.",
+            "result": "→ The model only retains the first sentence."
+          },
+          "random": {
+            "label": "With shuffling (random)",
+            "description": "Each batch picks a random piece from the corpus. The model sees all sentences fairly.",
+            "result": "→ The model learns both sentences."
+          },
+          "note": "This is exactly what GPT-4 and Claude do: their training data (billions of texts) is shuffled randomly before each pass. Nobody trains an LLM by reading documents from first to last."
+        },
+        "processSteps": {
+          "title": "Summary of the process in 7 steps:",
+          "step1": "Tokenize the raw text → sequence of IDs",
+          "step2": "Split into fixed-size windows (e.g., 64)",
+          "step3": "Shift by one position → input/target pairs",
+          "step4": "Group into batches (e.g., 16 windows/batch)",
+          "step5": "For each batch: forward → loss → backward → update",
+          "step6": "Repeat for all batches = 1 epoch",
+          "step7": "Repeat for N epochs (shuffling the order)"
+        }
+      },
+      "pipelineArrowLabel": "data ready → the training pipeline",
+      "steps": {
+        "tokenization": {
+          "title": "Tokenization",
+          "subtitle": "From text to numbers",
+          "description": "Splits the text into tokens and assigns a numeric ID to each one.",
+          "link": "See details →"
+        },
+        "embedding": {
+          "title": "Embedding",
+          "subtitle": "From numbers to vectors",
+          "description": "Each ID is replaced by a learned 64-dimensional vector — a rich \"identity card\" for the token.",
+          "link": "See details →",
+          "arrowLabel": "IDs → vectors"
+        },
+        "positionalEncoding": {
+          "title": "Positional encoding",
+          "subtitle": "Token order",
+          "description": "Adds a position signal (sin/cos) to each vector so the model knows where each token is, not just what it is.",
+          "link": "See details →",
+          "arrowLabel": "+ position",
+          "flowNote": "(same shape, position info added)"
+        },
+        "attention": {
+          "title": "Attention",
+          "subtitle": "Understanding context",
+          "description": "Each token \"consults\" preceding tokens via Q, K, V to integrate context. 4 heads in parallel, each capturing a different type of relationship.",
+          "link": "See details →",
+          "arrowLabel": "→ attention",
+          "flowNote": "→ multi-head attention + residual →"
+        },
+        "feedforward": {
+          "title": "Feed-Forward",
+          "subtitle": "Processing information",
+          "description": "Each token is processed individually: expansion (64→256) → ReLU → compression (256→64) → + residual. This is where the model's \"knowledge\" is primarily stored.",
+          "link": "See details →",
+          "arrowLabel": "→ FFN",
+          "flowNote": "→ FFN + residual →"
+        },
+        "layerRepeat": "× 4 layers (Attention + FFN repeat)",
+        "loss": {
+          "title": "Error computation (Loss)",
+          "subtitle": "Measuring performance",
+          "description": "The final vector is projected into probabilities via W_out + softmax. The loss measures the gap between prediction and truth: the lower the probability of the correct token, the higher the loss.",
+          "link": "See details →",
+          "arrowLabel": "→ probabilities → error"
+        },
+        "backpropagation": {
+          "title": "Backpropagation",
+          "subtitle": "Finding the culprits",
+          "description": "The gradient flows backward layer by layer (gradient × Wᵀ). Each weight receives a gradient indicating in which direction and by how much to correct it.",
+          "link": "See details →",
+          "arrowLabel": "→ gradients (backward)",
+          "flowNote": "→ chain of derivation →"
+        },
+        "optimizer": {
+          "title": "Optimizer (Adam)",
+          "subtitle": "Correcting the weights",
+          "description": "Adam uses the gradients to adjust each weight, with momentum (persistent direction) and adaptive speed (normalizes amplitude). Result: each weight advances at the same pace.",
+          "link": "See details →",
+          "arrowLabel": "→ weight update",
+          "flowNote": "~200k corrected weights"
+        }
+      },
+      "trainingLoop": {
+        "title": "The training loop",
+        "description": "The 8 steps above constitute a single iteration. The model repeats this loop thousands of times on different sentences:",
+        "labels": {
+          "forwardPass": "Forward pass",
+          "forwardSteps": "steps 1→5",
+          "loss": "Loss",
+          "lossStep": "step 6",
+          "backprop": "Backprop",
+          "backpropStep": "step 7",
+          "update": "Update",
+          "updateStep": "step 8",
+          "restart": "start over"
+        },
+        "evolution": {
+          "iter1": "Iteration 1: P(t|The ca) = 6% loss = 2.81 ← random",
+          "iter100": "Iteration 100: P(t|The ca) = 20% loss = 1.61",
+          "iter500": "Iteration 500: P(t|The ca) = 42% loss = 0.87",
+          "iter2000": "Iteration 2000: P(t|The ca) = 75% loss = 0.29",
+          "iter5000": "Iteration 5000: P(t|The ca) = 92% loss = 0.08 ← near-perfect"
+        }
+      },
+      "whatModelLearns": {
+        "title": "What the model learns at each layer",
+        "description": "Nothing is manually programmed. All the \"skills\" below emerge from repeating the training loop:",
+        "embeddingMatrix": {
+          "title": "Embedding matrix",
+          "description": "Tokens that appear in the same contexts get close vectors. \"a\" and \"e\" (vowels) end up in the same zone of the space."
+        },
+        "attentionMatrices": {
+          "title": "Attention matrices (W_Q, W_K, W_V)",
+          "description": "Each head discovers a useful type of relationship: grouping letters of a word, spotting spaces, looking at immediate neighbors..."
+        },
+        "ffnMatrices": {
+          "title": "FFN matrices (W₁, W₂)",
+          "description": "The FFN learns to extract patterns: \"after ch, the likely continuations are -at, -er, -ien\". This is where the model's \"knowledge\" is stored."
+        },
+        "outputLayer": {
+          "title": "Output layer",
+          "description": "Learns to convert the enriched vector into a probability distribution over the vocabulary. Vectors close to \"t\" activate the score for token \"t\"."
+        }
+      },
+      "parametersInventory": {
+        "title": "Complete inventory of learned parameters",
+        "description": "Here are all the matrices that the model must learn. Initially, they are filled with random numbers. It's the training loop that progressively transforms them into \"knowledge\".",
+        "embedding": {
+          "label": "Step 2 — Embedding",
+          "wEmb": "Each row = a token's vector",
+          "tableHeaders": {
+            "matrix": "Matrix",
+            "size": "Size",
+            "params": "Parameters",
+            "role": "Role"
+          }
+        },
+        "attention": {
+          "label": "Step 4 — Attention (× 4 heads × 4 layers)",
+          "tableHeaders": {
+            "matrix": "Matrix",
+            "sizePerHead": "Size / head",
+            "perLayer": "/ layer",
+            "times4": "× 4 layers",
+            "role": "Role"
+          },
+          "wqRole": "Projects toward \"what is this token looking for?\"",
+          "wkRole": "Projects toward \"what does this token offer?\"",
+          "wvRole": "Projects toward \"what info to transmit?\"",
+          "woRole": "Recombines the 4 heads into a single vector",
+          "subtotal": "Attention subtotal"
+        },
+        "ffn": {
+          "label": "Step 5 — Feed-Forward (× 4 layers)",
+          "tableHeaders": {
+            "matrix": "Matrix",
+            "size": "Size",
+            "perLayer": "/ layer",
+            "times4": "× 4 layers",
+            "role": "Role"
+          },
+          "w1Role": "Expansion: detects patterns",
+          "b1Role": "Expansion bias",
+          "w2Role": "Compression: synthesizes patterns",
+          "b2Role": "Compression bias",
+          "subtotal": "FFN subtotal"
+        },
+        "output": {
+          "label": "Output layer",
+          "wOutRole": "Converts the final vector into per-token scores",
+          "tableHeaders": {
+            "matrix": "Matrix",
+            "size": "Size",
+            "params": "Parameters",
+            "role": "Role"
+          }
+        },
+        "total": {
+          "title": "Total learned parameters",
+          "note": "That's ~200,000 numbers initialized randomly, which the training loop progressively adjusts. GPT-3 has 175 billion — the same principle, at a completely different scale.",
+          "breakdownEmbedding": "Embedding:",
+          "breakdownAttention": "Attention × 4:",
+          "breakdownAttentionPerLayer": "(16,384 / layer)",
+          "breakdownFFN": "FFN × 4:",
+          "breakdownFFNPerLayer": "(33,088 / layer)",
+          "breakdownOutput": "Output:"
+        },
+        "learnedVsFixed": {
+          "title": "Visual recap: learned vs fixed",
+          "learnedLabel": "Learned parameters",
+          "learnedItems": {
+            "wEmb": "W_emb — embedding matrix",
+            "wqkv": "W_Q, W_K, W_V — attention projections",
+            "wO": "W_O — head recombination",
+            "ffn": "W₁, b₁, W₂, b₂ — FFN network",
+            "wOut": "W_out — output layer"
+          },
+          "fixedLabel": "Fixed operations (not learned)",
+          "fixedItems": {
+            "tokenization": "Tokenization — lookup table",
+            "pe": "PE(pos) — positional encoding (sin/cos)",
+            "softmax": "softmax — probability normalization",
+            "relu": "ReLU — activation function",
+            "loss": "Loss — error measurement",
+            "backprop": "Backprop — gradient computation"
+          }
+        }
+      },
+      "keyConcepts": {
+        "title": "Summary",
+        "concept1": {
+          "bold": "Everything is learned, nothing is programmed.",
+          "detail": "The embedding, attention, and FFN matrices are initialized randomly. It's the loop [forward → loss → backprop → update] × thousands of iterations that transforms them into \"knowledge\"."
+        },
+        "concept2": {
+          "bold": "The data shape doesn't change (except at input and output).",
+          "detail": "From step 2 to step 5, it's always a 6×64 matrix. Only the content is enriched at each layer. Attention adds context, the FFN adds reasoning."
+        },
+        "concept3": {
+          "bold": "Residual connections preserve everything.",
+          "detail": "output = input + transformation. The original information traverses all layers without loss. The transformations only add \"margin notes\"."
+        },
+        "concept4": {
+          "bold": "Context changes everything.",
+          "detail": "The same token \"a\" has a loss of 0.60 after \"The c\" and 0.69 after \"The cat m\". The model uses all preceding context for each prediction."
+        },
+        "concept5": {
+          "bold": "\"Semantics\" emerges from mathematical optimization.",
+          "detail": "Q, K, V are just matrix projections. Attention heads are just parallel comparison spaces. But after training, these purely mathematical constructs produce behaviors that resemble understanding."
+        }
+      },
+      "navigation": {
+        "previous": "← Optimizer",
+        "next": "Generation Pipeline →"
+      }
+    }
+  },
+  "generation": {
+    "prompt": {
+      "title": "Prompt Tokenization",
+      "subtitle": "The user input",
+      "exampleContext": "The user types \"The cat\" — the model must first convert this text into numbers.",
+      "problem": {
+        "title": "The problem: the model only understands numbers",
+        "description": "The user types \"The\" and expects the continuation. But the trained model only works with numbers. We need to convert the prompt text into a numerical sequence — exactly like during training."
+      },
+      "trainingVsGeneration": {
+        "title": "Training vs Generation: what's the difference?",
+        "training": "The tokenizer builds the vocabulary from the data (which tokens exist?). Then it converts all the training text into IDs.",
+        "generation": "The tokenizer reuses the same vocabulary already built. It only converts the user's prompt.",
+        "trainingLabel": "training",
+        "generationLabel": "generation"
+      },
+      "sameVocab": "The same vocabulary learned during training is used. The tokenizer converts each token of the prompt into its ID.",
+      "bosToken": {
+        "title": "Automatic addition of the <BOS> token",
+        "description": "Before converting the prompt into IDs, the system automatically adds the <BOS> (Beginning of Sentence) token at the beginning of the sequence. This token signals to the model: \"a new sentence starts here\".",
+        "eosNote": "If the model generates an <EOS> (End of Sentence), generation stops automatically — the sentence is complete. These special tokens are transparent: the returned text does not contain them."
+      },
+      "unknownTokens": {
+        "title": "Watch out for unknown tokens",
+        "description": "If the user types a token that is not in the vocabulary (never seen during training), the model won't be able to process it.",
+        "note": "This is why training data is crucial: it defines the \"world\" that the model knows."
+      },
+      "calculation": {
+        "title": "Tokenization of the prompt \"The cat\"",
+        "description": "We convert each token into its ID, using the same vocabulary as training.",
+        "result": "→ 2 tokens → 2 numbers. This sequence will enter the trained model."
+      },
+      "code": {
+        "bosSequence": "→ The model first sees BOS, then the prompt tokens",
+        "promptLabel": "# Prompt:",
+        "idsLabel": "# IDs:",
+        "sequenceResult": "→ Sequence: [{{id1}}, {{id2}}]",
+        "toModel": "model input"
+      },
+      "summary": {
+        "title": "Summary",
+        "step1": "The user enters their prompt as text.",
+        "step2": "The tokenizer converts each token into an ID (same vocabulary as during training).",
+        "step3": "The number sequence is sent to the model."
+      }
+    },
+    "forwardPass": {
+      "title": "Forward Pass",
+      "subtitle": "The full computation",
+      "exampleContext": "The prompt tokens traverse all layers of the trained model.",
+      "problem": {
+        "title": "The problem: IDs aren't enough to predict",
+        "description1": "We have the sequence [1, 4] (the IDs of \"The\") — but these are just numbers. To predict the next token, the model needs to understand the context: \"what comes after 'The'?\"",
+        "description2": "That's exactly what the forward pass does: the tokens traverse all the model's layers, which progressively transform them into a prediction."
+      },
+      "path": {
+        "title": "The path: all steps in sequence",
+        "description": "The tokens traverse exactly the same network as during training. The only difference: the weights have been adjusted and the model \"knows\" something.",
+        "step1": "Embedding: IDs → 64-dimensional vectors",
+        "step2": "Positional encoding: + position signal",
+        "step3": "Attention: each token consults the preceding ones",
+        "step4": "Feed-Forward: each token \"digests\" the information",
+        "repeat": "Repeat steps 3-4 for each layer",
+        "step5": "Output layer: vector → scores for each token in the vocabulary"
+      },
+      "lastToken": {
+        "title": "Why only the last token matters?",
+        "description": "The model produces scores for every position in the sequence. But only the last token (position 1, the \"e\" of \"The\") has seen the entire context thanks to the attention mechanism."
+      },
+      "calculation": {
+        "flowTitle": "Data flow through the model",
+        "flowDescription": "Data traverses the model layer by layer. Click on a block to review the corresponding step.",
+        "exampleTitle": "Concrete example: \"The cat\" → scores",
+        "exampleDescription": "Here is what comes out of the model at the last token's position.",
+        "result": "→ The model gives the highest score to \" \" (2.3) — after \"The\", a space is very likely. But these are raw scores — not probabilities yet! → next step."
+      },
+      "code": {
+        "embeddingDesc": " IDs → 64-dimensional vectors",
+        "positionalEncodingTerm": "Pos. encoding",
+        "positionalEncodingDesc": " + position signal (\"I am at position 0, 1...\")",
+        "attentionDesc": " each token looks at the preceding ones",
+        "ffnDesc": "Feed-Forward: each token \"digests\" the info",
+        "outputLayerDesc1": "Output layer → 7",
+        "scoresTerm": "scores",
+        "outputLayerDesc2": "(one per vocabulary token)",
+        "scoresTitle": "# Raw scores (model output, position of \"e\"):",
+        "scoresExplanation": "← the highest = the model thinks \" \" comes after \"The\"",
+        "inputComment": "# Input: IDs [1, 4] (\"L\", \"e\")",
+        "afterEmbedding": "# After Embedding:",
+        "afterPositional": "# + Positional encoding:",
+        "positionSignal": "each vector receives a position signal (pos 0, pos 1)",
+        "afterAttention": "# After Attention + FFN (×N layers):",
+        "contextEnriched": "the vectors are enriched with context",
+        "outputLayer": "# Output layer (last token only):",
+        "summaryDiagram1": "[1, 4] → embedding → position → attention → FFN →",
+        "summaryDiagram2": "→ next token?"
+      },
+      "summary": {
+        "title": "Summary",
+        "step1": "The prompt IDs traverse all layers (embedding → position → attention → FFN).",
+        "step2": "Each layer transforms the vectors and enriches their understanding of context.",
+        "step3": "At the output, the last token produces one score per vocabulary token."
+      }
+    },
+    "softmax": {
+      "title": "Probabilities and Temperature",
+      "subtitle": "From scores to choices",
+      "exampleContext": "The raw scores are converted into probabilities, adjusted by temperature.",
+      "problem": {
+        "title": "The problem: raw scores are not directly usable",
+        "description1": "The model's output is a vector of raw scores — arbitrary numbers: 2.1, 1.1, 0.9, −0.3...",
+        "description2": "These scores are not probabilities: they can be negative, they don't total 1, and you can't use them to \"draw\" a token. We need to transform them into probabilities between 0 and 1 that sum to 1."
+      },
+      "softmaxExplained": {
+        "title": "Softmax: from scores to probabilities",
+        "description": "Softmax does 3 things in a single operation:",
+        "step1": "Applies the exponential (e^x) to each score → they all become positive",
+        "step2": "Divides each result by the sum of all → the values total 1",
+        "step3": "Amplifies differences: a score slightly larger than the others becomes a much larger probability"
+      },
+      "temperature": {
+        "title": "Temperature: controlling confidence",
+        "description": "Temperature is a number by which we divide the scores before softmax. It's like a \"confidence slider\":",
+        "low": {
+          "title": "Low temperature (0.1 – 0.5) → \"I am very confident\"",
+          "description": "We divide by a small number → the scores are amplified → the most likely token receives nearly 100%. The text is repetitive but coherent."
+        },
+        "medium": {
+          "title": "Medium temperature (0.7 – 1.0) → \"I'm a bit unsure\"",
+          "description": "Good balance between predictability and creativity. The most likely token is favored but alternatives have a chance."
+        },
+        "high": {
+          "title": "High temperature (1.2+) → \"Anything is possible!\"",
+          "description": "We divide by a large number → the scores are flattened → all probabilities get closer. The text is creative but sometimes incoherent."
+        }
+      },
+      "calculation": {
+        "title": "Concrete example: scores → probabilities",
+        "description": "Here is the complete computation for the 7 vocabulary tokens after \"The ca\".",
+        "effectTitle": "Effect of temperature",
+        "effectDescription": "Move the slider to see how temperature affects the probability distribution."
+      },
+      "code": {
+        "rawScoresComment": "# Raw scores (after \"The ca\"):",
+        "afterSoftmaxComment": "# After softmax:",
+        "amplificationNote": "← the score 2.1 gives 36%, the others are crushed",
+        "rawLogitsComment": "# Raw scores (logits after \"The ca\"):",
+        "divideByTComment": "# ÷ Temperature (T=0.8):",
+        "exponentialComment": "# Exponential (e^x):",
+        "divisionBySumComment": "# ÷ sum (26.6) → probabilities:"
+      },
+      "summary": {
+        "title": "Summary",
+        "step1": "The raw scores are divided by the temperature.",
+        "step2": "Softmax transforms the scores into probabilities (sum = 1).",
+        "step3": "Low temperature = confident, high temperature = creative."
+      },
+      "deepDive": {
+        "title": "The Softmax formula with temperature",
+        "formulaName": "Softmax with temperature",
+        "formulaExplanation": "T controls the \"sharpness\" of the distribution. T→0: one-hot (a single token at 100%). T→∞: uniform (all equal).",
+        "propertiesName": "Guaranteed properties",
+        "propertiesExplanation": "Regardless of the input scores, softmax always produces valid probabilities: positive and summing to 1."
+      }
+    },
+    "sampling": {
+      "title": "Sampling",
+      "subtitle": "Choosing the next token",
+      "exampleContext": "The model randomly draws the next token based on the probabilities.",
+      "problem": {
+        "title": "The problem: why not always pick the most probable?",
+        "description": "We have the probabilities: t=52%, e=15%, a=12%... The simplest solution would be to always choose \"t\" (the most probable). But this causes a major problem:",
+        "greedyProblem": "By always choosing the most probable token, the text becomes repetitive and predictable. The model cannot \"explore\" other phrasings."
+      },
+      "idea": "Sampling solves this problem: instead of always taking the max, we do a weighted random draw. Tokens with high probability are favored, but others also have a chance.",
+      "wheelAnalogy": {
+        "title": "The wheel of fortune analogy",
+        "description": "Imagine a wheel of fortune where each section is proportional to the token's probability:",
+        "note": "We \"spin the wheel\": \"t\" occupies 52% of the surface, so it has a 52% chance of being chosen. But \"e\" (15%) or even \"T\" (3%) can also come up. This is what gives variety to the model's responses."
+      },
+      "strategies": {
+        "title": "Different selection strategies",
+        "simple": {
+          "title": "Simple sampling (our mini-LLM)",
+          "description": "Weighted draw among all tokens. Simple but can sometimes choose very improbable tokens (→ incoherent text)."
+        },
+        "topK": {
+          "title": "Top-k sampling (GPT)",
+          "description": "We keep only the k best tokens (e.g., top-50) and redistribute probabilities among them. Very improbable tokens are eliminated."
+        },
+        "topP": {
+          "title": "Top-p / nucleus sampling (Claude, GPT-4)",
+          "description": "We keep the tokens whose cumulative probability reaches p% (e.g., top-p=0.9 → we keep tokens up to 90% cumulated). More adaptive than top-k."
+        },
+        "greedy": {
+          "title": "Greedy",
+          "description": "Always the most probable token. No variety. Equivalent to temperature = 0."
+        }
+      },
+      "calculation": {
+        "title": "Weighted draw example",
+        "description": "The model predicts \"t\" after \"The ca\" — here's how the draw works.",
+        "randomNote": "If random() had returned 0.60, we would have gotten \"e\". If 0.98, we would have gotten \"T\" (rare!). This is what makes each run potentially different."
+      },
+      "code": {
+        "greedyComment": "# If we always pick the most probable (greedy):",
+        "greedyLoopComment": "# The model loops endlessly!",
+        "randomDrawComment": "# Random draw (number between 0 and 1):",
+        "accumulateComment": "# We accumulate the probabilities:",
+        "fallsHere": "← 0.27 falls here!",
+        "selectedToken": "→ Selected token:"
+      },
+      "summary": {
+        "title": "Summary",
+        "step1": "We draw a random number between 0 and 1.",
+        "step2": "We traverse the cumulative probabilities until we exceed that number.",
+        "step3": "The corresponding token is chosen → added to the text.",
+        "note": "It's this element of randomness that means the model doesn't always give the same answer for the same prompt. Two runs can produce different texts."
+      }
+    },
+    "autoregressive": {
+      "title": "Autoregressive Loop",
+      "subtitle": "Generating word by word",
+      "exampleContext": "The model generates a token, adds it to the text, then starts over — in a loop.",
+      "problem": {
+        "title": "The problem: a single token is not enough",
+        "description1": "The previous steps (forward pass → softmax → sampling) only produce a single token. The user expects a complete response, not just one token.",
+        "description2": "How do we generate multiple tokens? The model doesn't know how to \"write a sentence all at once\" — it can only predict the next one. So we need to repeat the operation."
+      },
+      "idea": "Autoregressive generation is a loop: the model generates a token, adds it to the existing text, then starts again with the extended text. \"Autoregressive\" means its own output becomes its input.",
+      "blindWriterAnalogy": {
+        "title": "The analogy: writing blindfolded, letter by letter",
+        "description": "Imagine someone writing while blindfolded, but who can reread everything they've written before choosing the next letter:",
+        "note": "At each step, the writer rereads all the text (the prompt + everything already generated) to decide on the next letter. This is exactly what the model does."
+      },
+      "loopSteps": {
+        "title": "The 5 steps of the loop",
+        "step1": "Tokenize all current text (prompt + already generated tokens)",
+        "step2": "Forward pass through the trained model (embedding → attention → FFN → output)",
+        "step3": "Softmax + temperature → probabilities",
+        "step4": "Sampling → one token chosen",
+        "step5": "Add the token to the text and go back to step 1"
+      },
+      "contextWindow": {
+        "title": "The context window: limited memory",
+        "description": "The model can only see the last few tokens (the \"context window\"). If the text exceeds this size, the first tokens fall out of the window and the model forgets them."
+      },
+      "stopConditions": {
+        "title": "When to stop?",
+        "description": "The loop stops in two cases:",
+        "maxTokens": "The maximum number of tokens is reached",
+        "eosToken": "The model generates an end-of-sentence token (<EOS>)"
+      },
+      "bosEos": {
+        "title": "Special tokens: <BOS> and <EOS>",
+        "description": "For the model to know when a sentence begins and when it's finished, we add two special tokens to the vocabulary:",
+        "bos": {
+          "title": "<BOS> — Beginning of Sentence",
+          "description": "Automatically added before the prompt. It signals to the model: \"a new sentence starts here\"."
+        },
+        "eos": {
+          "title": "<EOS> — End of Sentence",
+          "description": "The model learns to generate it when the sentence is complete. The loop stops immediately when EOS is produced."
+        },
+        "note": "These tokens are transparent to the user: the returned text contains neither <BOS> nor <EOS>. They are reserved for the last two IDs of the vocabulary."
+      },
+      "calculation": {
+        "stepByStepTitle": "Step-by-step example: \"The\" → \"The cat\"",
+        "stepByStepDescription": "Here are the details of each iteration of the loop.",
+        "tableHeaders": {
+          "step": "#",
+          "inputText": "Input text",
+          "predicted": "Predicted",
+          "confidence": "Confidence"
+        },
+        "animationTitle": "Animated generation",
+        "animationDescription": "Click Start to watch the model generate text token by token.",
+        "confidenceNote": "Notice: confidence is high for \" \" after \"The\" (85%) because the model learned that \"The\" is followed by a space. Confidence then varies by context: \"h\" after \"The c\" is very certain (92%), while \"t\" after \"The ca\" is less so (52%)."
+      },
+      "code": {
+        "blindWriterRead": "Reads",
+        "blindWriterWrite": "writes",
+        "blindWriterResult": "→ Result: \"The cat\"",
+        "contextWindowComment": "# 128-token window:",
+        "contextWindowForgotten": "↑ the beginning is \"forgotten\" when the text exceeds 128 tokens",
+        "trainingComment": "# During training, each sentence is framed:",
+        "trainingExample": "Hello, how are you?",
+        "generationComment": "# During generation:",
+        "autoStop": "← automatic stop",
+        "summaryLoop": "loop",
+        "summaryAppend": "append",
+        "summaryResult": "complete text"
+      },
+      "summary": {
+        "title": "Summary",
+        "step1": "The model can only predict one token at a time.",
+        "step2": "The autoregressive loop repeats: forward pass → softmax → sampling → add to text.",
+        "step3": "At each turn, the model \"rereads\" all the text (within its context window).",
+        "step4": "The loop stops at the max token count or at the end-of-sentence token.",
+        "note": "This is the complete text generation process. But a fascinating question remains: what happens when you give the model a word it has never seen?",
+        "beyondLink": "Discover → Beyond statistics"
+      }
+    }
+  },
+  "math": {
+    "vectorsMatrices": {
+      "categoryLabel": "Math Refresher",
+      "title": "Vectors & Matrices",
+      "subtitle": "An LLM manipulates lists of numbers (vectors) and tables of numbers (matrices). Here are the basic operations.",
+      "vector": {
+        "title": "What is a vector?",
+        "description": "A vector is simply an ordered list of numbers. In an LLM, each word is represented by a vector — a list of values that encodes its \"meaning\".",
+        "note": "This vector has 4 dimensions. LLM embeddings often have 64, 128, or more dimensions."
+      },
+      "addition": {
+        "title": "Vector addition",
+        "description": "We add two vectors element by element. This is used for example to add the positional encoding to a word's embedding."
+      },
+      "matrix": {
+        "title": "What is a matrix?",
+        "description": "A matrix is a rectangular table of numbers. The model's weights (what it learns) are stored in matrices.",
+        "sizeNote": "2×3 matrix: 2 rows, 3 columns",
+        "llmNote": "In an LLM, for example, the embedding matrix has size vocabulary × dimension — each row is the vector for a character."
+      },
+      "dotProduct": {
+        "title": "Dot product",
+        "description": "The dot product is the most important operation in an LLM. We multiply the elements one by one, then add everything up. The result is a single number that measures the \"similarity\" between two vectors.",
+        "calcNote": "We multiply each pair, then add:",
+        "note": "A high dot product means the two vectors \"point in the same direction\" — this is exactly what attention uses to measure relevance between two words."
+      },
+      "elementWise": {
+        "title": "Element-wise multiplication",
+        "description": "Unlike the dot product, here we keep a vector as output: we multiply each element by the one at the same position.",
+        "resultNote": "Result: a vector (not a number)"
+      },
+      "labels": {
+        "vocabDimension": "vocabulary × dimension"
+      },
+      "usedIn": {
+        "title": "Where it's used in the course",
+        "embeddingLabel": "Embedding",
+        "embeddingDesc": "each token is converted into a vector",
+        "positionalEncodingLabel": "Positional encoding",
+        "positionalEncodingDesc": "we add a position vector to the embedding",
+        "attentionLabel": "Attention",
+        "attentionDesc": "the dot product between Q and K measures relevance between two words",
+        "weightsLabel": "Model weights",
+        "weightsDesc": "stored in matrices, updated during training"
+      }
+    },
+    "matrixProduct": {
+      "categoryLabel": "Math Refresher",
+      "title": "Matrix Product",
+      "subtitle": "The most important operation in an LLM. The matrix product transforms a vector into another by combining all its values.",
+      "intuition": {
+        "title": "The intuition",
+        "description": "Multiplying a matrix by a vector is computing a \"weighted sum\" of its values for each output. Each row of the matrix defines a different \"mix\" of the inputs."
+      },
+      "matVec": {
+        "title": "Matrix × Vector",
+        "description": "We multiply each row of the matrix by the vector (element by element), then add."
+      },
+      "matMat": {
+        "title": "Matrix × Matrix",
+        "description": "Same principle: each column of the second matrix is treated as a vector. The result has as many rows as the first and as many columns as the second.",
+        "rule": "Rule: the number of columns of the first must equal the number of rows of the second."
+      },
+      "labels": {
+        "matrix": "Matrix ({{rows}}×{{cols}})",
+        "vector": "Vector ({{size}})",
+        "result": "Result ({{size}})",
+        "rowN": "Row {{n}}",
+        "rowNColN": "Row {{row}}, Column {{col}}",
+        "originalMatrix": "Original ({{rows}}×{{cols}})",
+        "transposedMatrix": "Transposed ({{rows}}×{{cols}})",
+        "columnN": "Column {{n}}"
+      },
+      "transpose": {
+        "title": "Transposition",
+        "description": "Transposing a matrix means swapping its rows and columns. Denoted M^T. It's used in the attention computation (Q × K^T)."
+      },
+      "usedIn": {
+        "title": "Where it's used in the course",
+        "embeddingLabel": "Embedding",
+        "embeddingDesc": "looking up a vector in a weight matrix",
+        "attentionLabel": "Attention",
+        "attentionDesc": "Q × K^T to compute attention scores",
+        "feedforwardLabel": "Feed-Forward",
+        "feedforwardDesc": "transforms each vector via two successive matrix products",
+        "projectionLabel": "Final projection",
+        "projectionDesc": "converts internal vectors into vocabulary scores"
+      }
+    },
+    "specialFunctions": {
+      "categoryLabel": "Math Refresher",
+      "title": "Special Functions",
+      "subtitle": "Three functions come up constantly in LLMs: the exponential, softmax, and logarithm. Here's what they do, simply.",
+      "exponential": {
+        "title": "The exponential (exp)",
+        "description": "The exponential transforms any number into a number that is always positive. The larger the input, the more the output explodes. The more negative the input, the closer the output gets to 0.",
+        "note": "Remember: exp makes everything positive and amplifies large differences."
+      },
+      "softmax": {
+        "title": "Softmax",
+        "description": "Softmax transforms a list of arbitrary numbers into probabilities (between 0 and 1, summing to 1). It's the key function for choosing the next token.",
+        "step1": "Step 1: apply exp to each score",
+        "step2": "Step 2: compute the sum of all exponentials",
+        "step3": "Step 3: divide each exp by the sum",
+        "resultNote": "Result: probabilities (sum = 1)",
+        "note": "The highest score (2.0) gets the highest probability (66%)."
+      },
+      "logarithm": {
+        "title": "The logarithm (log)",
+        "description": "The logarithm is the inverse of the exponential. It transforms a probability (between 0 and 1) into a negative number. The lower the probability, the more negative the log (= big error).",
+        "bigError": "← big error",
+        "almostPerfect": "← almost perfect",
+        "note": "This is the basis of error computation (loss): loss = -log(probability of the correct token)."
+      },
+      "labels": {
+        "sum": "sum",
+        "highest": "← highest",
+        "lowest": "← lowest"
+      },
+      "usedIn": {
+        "title": "Where it's used in the course",
+        "attentionLabel": "Attention",
+        "attentionDesc": "softmax on Q·K^T scores to get attention weights",
+        "generationLabel": "Generation",
+        "generationDesc": "softmax (with temperature) on logits to choose the next token",
+        "lossLabel": "Error computation",
+        "lossDesc": "-log(probability) measures how wrong the model is"
+      }
+    },
+    "derivatives": {
+      "categoryLabel": "Math Refresher",
+      "title": "Derivatives & Gradients",
+      "subtitle": "How does the model know which direction to correct its weights? Through derivatives, which measure the impact of each small change.",
+      "derivative": {
+        "title": "The derivative: measuring the slope",
+        "description1": "The derivative answers a simple question: if I move the input by a tiny amount, how much does the output change?",
+        "description2": "It's exactly like measuring the slope of a road: a steep slope means that a small horizontal displacement causes a large change in altitude.",
+        "highError": "High error",
+        "strongDerivative": "Strong derivative",
+        "bigChange": "= big change",
+        "mediumError": "Medium error",
+        "moderateDerivative": "Moderate derivative",
+        "mediumChange": "= medium change",
+        "minimalError": "Minimal error",
+        "zeroDerivative": "Derivative ≈ 0",
+        "arrived": "= we've arrived"
+      },
+      "example": {
+        "title": "Concrete example: f(x) = x²",
+        "description": "The derivative of x² is 2x. Note: f(x) and the derivative measure two different things:",
+        "fxLabel": "= the value of the function (\"how high am I\")",
+        "derivLabel": "= the derivative (\"how fast is it rising if I move a little\")",
+        "tableHeaderDeriv": "derivative = 2x",
+        "stepDetail": "x = {{x}} → derivative = 2 × {{x}} = ",
+        "flatCurve": " → the curve is flat, we're at the minimum",
+        "fasterThan": " → rising 5× faster than at x=1",
+        "howToRead": "How to read this table:",
+        "readNote": "The derivative goes from 0 to 10. We compare derivatives to each other: the larger the derivative (in absolute value), the steeper the curve at that point.",
+        "verification": "Verification for x = 3 (derivative = 6):",
+        "verificationNote": "The derivative predicts the change: change ≈ Δx × derivative. But this prediction is only good if the step Δx is very small:",
+        "smallStep": "Small step: Δx = 0.01",
+        "bigStep": "Large step: Δx = 1",
+        "actual": "actual",
+        "predicted": "predicted",
+        "accurate": "≈ {{value}} ✓ accurate",
+        "inaccurate": "≠ {{value}} ✗ inaccurate",
+        "precisionNote": "The smaller the step, the more reliable the derivative. That's why we use small learning rates during training."
+      },
+      "partialDerivative": {
+        "title": "Partial derivative: multiple inputs",
+        "whyDescription": "So far, we had a single input (x). But in an LLM, the error depends on thousands of weights simultaneously. The problem: if we move all weights at once, we don't know which one is responsible for the change.",
+        "solution": "The solution: move one weight at a time and keep all others fixed. This is the partial derivative.",
+        "notation": "Notation: ∂error/∂w₁",
+        "notationNote": "Note: ∂/∂ is not a division. It's a single symbol that reads \"derivative of ... with respect to ...\".",
+        "notationExplained": "The symbol ∂ (\"curly d\") indicates that we differentiate with respect to a single variable among several.",
+        "concreteTitle": "Concrete situation: an ultra-simple model",
+        "concreteDescription": "Imagine a model with only 2 weights: w₁ and w₂. The model's error depends on these 2 weights.",
+        "concreteNote": "This is not a real error formula (which would be more complicated), but it's enough to understand the principle: the error depends on multiple weights, and we want to know each one's impact.",
+        "notationMeaning": "\"how much does the error change if we move {{w}} a tiny bit\"",
+        "errorEquals": "the error equals",
+        "questionKey": "Question: to reduce this error, which weight should we adjust first?",
+        "rules": {
+          "title": "The 3 differentiation rules we need:",
+          "rule1Label": "Rule 1",
+          "rule1Desc": "the exponent comes down in front",
+          "rule2Label": "Rule 2",
+          "rule2Desc": "the coefficient stays",
+          "rule3Label": "Rule 3",
+          "rule3Desc": "what doesn't move disappears"
+        },
+        "w1Title": "∂error/∂w₁ — we move w₁, w₂ is frozen",
+        "w2Title": "∂error/∂w₂ — we move w₂, w₁ is frozen",
+        "deriveEachPart": "↓ we differentiate each part:",
+        "rule1Ref": "(rule 1)",
+        "rule2Ref": "(rule 2)",
+        "frozenConstRule3": "({{w}} is frozen = constant, rule 3)",
+        "verificationTitle": "Verification (Δ = 0.01):",
+        "answer": {
+          "title": "Answer:",
+          "impact": "{{w}} has an impact of {{val}} on the error",
+          "conclusion": "So w₁ influences the error more — it's the one to correct first."
+        }
+      },
+      "gradient": {
+        "title": "The gradient: all derivatives in a vector",
+        "description": "When we have N weights, we compute N partial derivatives. The gradient is simply the vector that groups them all together. It points in the direction where the error increases fastest — to reduce it, we go in the opposite direction.",
+        "twoWeights": "2 weights (our example, w₁=2, w₂=1):",
+        "nWeights": "N weights (a real LLM):",
+        "nWeightsNote": "→ a vector of N numbers, one per weight",
+        "says": "The gradient [4, 3] says:",
+        "impactSentence": "\"{{w}} has an impact of {{val}} on the error → {{desc}}\"",
+        "correctALot": "it needs a lot of correction",
+        "correctABitLess": "a bit less"
+      },
+      "gradientDescent": {
+        "title": "Gradient descent",
+        "description": "This is the algorithm at the heart of training. We repeat in a loop:",
+        "step1": "Pass data through the model (forward)",
+        "step2": "Measure the error (loss)",
+        "step3": "Compute the gradient of the error for each weight",
+        "step4": "Adjust each weight in the direction opposite to the gradient",
+        "formula": "Update formula:",
+        "exampleIntro": "Example with 2 weights, learning rate = 0.1:",
+        "tableHeaders": {
+          "weight": "weight",
+          "value": "value",
+          "gradient": "gradient",
+          "correction": "correction",
+          "new": "new"
+        },
+        "note": "The gradient of a (4.0) is larger than that of b (3.0), so a receives a larger correction (−0.4 vs −0.3)."
+      },
+      "learningRate": {
+        "title": "The learning rate",
+        "description": "The learning rate controls the step size. It's a crucial training setting.",
+        "tooLarge": {
+          "title": "Too large (1.0)",
+          "description": "Weights make huge jumps, error oscillates or explodes"
+        },
+        "correct": {
+          "title": "Correct (0.01)",
+          "description": "Weights gradually converge to the optimum"
+        },
+        "tooSmall": {
+          "title": "Too small (0.0001)",
+          "description": "Training works but takes forever"
+        }
+      },
+      "backpropagation": {
+        "title": "Backpropagation",
+        "description": "In an LLM, the computation goes through dozens of successive layers. Backpropagation is the technique that computes the gradient for each weight in each layer, starting from the final error and working backward toward the input.",
+        "chainRule": "Principle: the chain rule",
+        "input": "Input",
+        "layer": "Layer {{n}}",
+        "error": "Error",
+        "gradientLabel": "gradient",
+        "errorGradient": "∂Error",
+        "chainRuleExplained": "Key idea: the chain rule",
+        "chainRuleDescription": "If layer 3 takes the output of layer 2, and layer 2 takes the output of layer 1, then the impact of layer 1 on the error = impact of layer 1 on layer 2 × impact of layer 2 on layer 3 × impact of layer 3 on the error.",
+        "note": "We compute the gradients of the last layer first (easy, close to the error), then propagate them backward layer by layer — hence the name \"backpropagation\"."
+      },
+      "pipelineLink": {
+        "title": "Connection to the training pipeline",
+        "description": "These mathematical tools are concretely used in the following course steps. Each lesson contains examples with real numbers:",
+        "lossLink": "Error computation (step 6)",
+        "lossDesc": "— complete mini-model forward: embedding → logits → softmax → loss, with one-hot and gradient",
+        "backpropLink": "Backpropagation (step 7)",
+        "backpropDesc": "— step-by-step backward on the mini-model, weight updates, and verification",
+        "recapLink": "Recap (after step 8)",
+        "recapDesc": "— data preparation, batches, epochs, and the complete training flow"
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "groups": {
+    "discover": "DÉCOUVRIR",
+    "math": "RAPPELS MATHS",
+    "training": "ENTRAÎNEMENT",
+    "generation": "GÉNÉRATION",
+    "deeper": "ALLER PLUS LOIN",
+    "practice": "PRATIQUER",
+    "reference": "RÉFÉRENCE"
+  },
+  "sections": {
+    "introduction": {
+      "title": "Introduction",
+      "subtitle": "Qu'est-ce qu'un LLM ?"
+    },
+    "math/vectors-matrices": {
+      "title": "Vecteurs & Matrices",
+      "subtitle": "Les briques de base"
+    },
+    "math/matrix-product": {
+      "title": "Produit Matriciel",
+      "subtitle": "Combiner les dimensions"
+    },
+    "math/special-functions": {
+      "title": "Fonctions Spéciales",
+      "subtitle": "exp, softmax, log"
+    },
+    "math/derivatives": {
+      "title": "Dérivées & Gradients",
+      "subtitle": "Mesurer le changement"
+    },
+    "training/tokenization": {
+      "title": "Tokenisation",
+      "subtitle": "Du texte aux nombres"
+    },
+    "training/embedding": {
+      "title": "Embedding",
+      "subtitle": "Des nombres aux vecteurs"
+    },
+    "training/positional-encoding": {
+      "title": "Encodage Positionnel",
+      "subtitle": "L'ordre des mots"
+    },
+    "training/attention": {
+      "title": "Attention",
+      "subtitle": "Comprendre le contexte"
+    },
+    "training/feedforward": {
+      "title": "Réseau Feed-Forward",
+      "subtitle": "Traiter l'information"
+    },
+    "training/loss": {
+      "title": "Calcul de l'Erreur",
+      "subtitle": "Mesurer les progrès"
+    },
+    "training/backpropagation": {
+      "title": "Rétropropagation",
+      "subtitle": "Corriger les erreurs"
+    },
+    "training/optimizer": {
+      "title": "Optimiseur",
+      "subtitle": "Mettre à jour les poids"
+    },
+    "training/recap": {
+      "title": "Récapitulatif",
+      "subtitle": "Le pipeline complet"
+    },
+    "generation/prompt": {
+      "title": "Tokenisation du prompt",
+      "subtitle": "L'entrée utilisateur"
+    },
+    "generation/forward-pass": {
+      "title": "Passage dans le modèle",
+      "subtitle": "Le calcul complet"
+    },
+    "generation/softmax": {
+      "title": "Probabilités et Température",
+      "subtitle": "Des scores aux choix"
+    },
+    "generation/sampling": {
+      "title": "Échantillonnage",
+      "subtitle": "Choisir le prochain token"
+    },
+    "generation/autoregressive": {
+      "title": "Boucle autorégressive",
+      "subtitle": "Générer mot par mot"
+    },
+    "deeper/beyond": {
+      "title": "Au-delà de la statistique",
+      "subtitle": "Ce que les poids encodent vraiment"
+    },
+    "playground": {
+      "title": "Terrain de jeu",
+      "subtitle": "Configurer, entraîner, discuter"
+    },
+    "docs": {
+      "title": "Documentation technique",
+      "subtitle": "Référence complète"
+    }
+  }
+}

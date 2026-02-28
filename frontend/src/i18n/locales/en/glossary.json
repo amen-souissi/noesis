@@ -1,0 +1,152 @@
+{
+  "d_model": {
+    "vulgarized": "Model dimensions",
+    "technicalFr": "model dimension",
+    "definition": "Size of the internal vectors the model uses to represent each token. The larger it is, the more nuances the model can capture."
+  },
+  "n_heads": {
+    "vulgarized": "Attention heads",
+    "technicalFr": "number of attention heads",
+    "definition": "Number of parallel \"perspectives\" the model uses to analyze relationships between words."
+  },
+  "n_layers": {
+    "vulgarized": "Model layers",
+    "technicalFr": "number of layers",
+    "definition": "Number of stacked processing blocks. Each layer refines the understanding of the text."
+  },
+  "d_ff": {
+    "vulgarized": "Hidden layer size",
+    "technicalFr": "feed-forward dimension",
+    "definition": "Size of the intermediate layer in the feed-forward network. Typically 4× the model dimension."
+  },
+  "seq_len": {
+    "vulgarized": "Context size",
+    "technicalFr": "sequence length",
+    "definition": "Maximum number of tokens the model can \"see\" at once to make its prediction."
+  },
+  "vocab_size": {
+    "vulgarized": "Vocabulary size",
+    "technicalFr": "vocabulary size",
+    "definition": "Total number of different tokens the model knows."
+  },
+  "learning_rate": {
+    "vulgarized": "Learning speed",
+    "technicalFr": "learning rate",
+    "definition": "Controls how much corrections are made at each step. Too fast = unstable, too slow = slow learning."
+  },
+  "epochs": {
+    "vulgarized": "Training iterations",
+    "technicalFr": "epochs",
+    "definition": "Number of complete passes over all training data. More iterations = better memorization."
+  },
+  "batch_size": {
+    "vulgarized": "Batch splitting",
+    "technicalFr": "batch size",
+    "definition": "Number of examples processed simultaneously before updating weights. A trade-off between speed and stability."
+  },
+  "grad_clip": {
+    "vulgarized": "Correction limit",
+    "technicalFr": "gradient clipping",
+    "definition": "Prevents overly harsh corrections that could destabilize the model."
+  },
+  "loss": {
+    "vulgarized": "Model error",
+    "technicalFr": "loss function",
+    "definition": "Measures how far the model's predictions are from reality. The goal is to reduce it."
+  },
+  "backpropagation": {
+    "vulgarized": "Backpropagation",
+    "technicalFr": "gradient backpropagation",
+    "definition": "Algorithm that computes, for each weight, which direction to adjust it to reduce the error."
+  },
+  "beta1": {
+    "vulgarized": "Momentum",
+    "technicalFr": "momentum coefficient",
+    "definition": "Controls the inertia of updates. Helps \"smooth\" the trajectory and avoid oscillations."
+  },
+  "beta2": {
+    "vulgarized": "Speed adaptation",
+    "technicalFr": "RMSprop coefficient",
+    "definition": "Automatically adapts the learning speed for each weight individually."
+  },
+  "epsilon": {
+    "vulgarized": "Stabilizer",
+    "technicalFr": "epsilon",
+    "definition": "Small value that prevents division by zero in the optimizer calculation."
+  },
+  "weight_decay": {
+    "vulgarized": "Weight regularization",
+    "technicalFr": "weight decay",
+    "definition": "Forces weights to stay small by slightly reducing them at each step. Prevents memorization and promotes generalization (grokking)."
+  },
+  "lr_schedule": {
+    "vulgarized": "Learning rhythm",
+    "technicalFr": "learning rate schedule",
+    "definition": "Varies the learning speed during training. Cosine annealing alternates between intense and calm phases, promoting grokking."
+  },
+  "temperature": {
+    "vulgarized": "Creativity",
+    "technicalFr": "temperature",
+    "definition": "Controls the diversity of responses. Low = repetitive and safe. High = creative and surprising."
+  },
+  "max_gen_len": {
+    "vulgarized": "Maximum response length",
+    "technicalFr": "max generation length",
+    "definition": "Maximum number of tokens the model can generate in one response."
+  },
+  "softmax": {
+    "vulgarized": "Probability conversion",
+    "technicalFr": "softmax function",
+    "definition": "Transforms the model's raw scores into probabilities (numbers between 0 and 1 that sum to 1)."
+  },
+  "logits": {
+    "vulgarized": "Raw scores",
+    "technicalFr": "logits",
+    "definition": "Numerical scores the model assigns to each possible token before converting them to probabilities."
+  },
+  "sampling": {
+    "vulgarized": "Weighted random draw",
+    "technicalFr": "sampling",
+    "definition": "The model chooses the next token by \"drawing lots\" among candidates, weighted by their probabilities."
+  },
+  "autoregressive": {
+    "vulgarized": "Word-by-word generation",
+    "technicalFr": "autoregressive generation",
+    "definition": "The model generates one token at a time, then adds it to the text to predict the next one, in a loop."
+  },
+  "bos_token": {
+    "vulgarized": "Sentence start",
+    "technicalFr": "beginning of sentence token",
+    "definition": "Special token automatically added before the prompt to signal the model that a new sentence starts here."
+  },
+  "eos_token": {
+    "vulgarized": "Sentence end",
+    "technicalFr": "end of sentence token",
+    "definition": "Special token the model learns to generate when a sentence is complete. Generation stops automatically."
+  },
+  "tokenizer": {
+    "vulgarized": "Text splitter",
+    "technicalFr": "tokenizer",
+    "definition": "Tool that splits text into units (tokens) and assigns a unique number to each one."
+  },
+  "embedding": {
+    "vulgarized": "Vector representation",
+    "technicalFr": "embedding",
+    "definition": "Transforms each token into a vector of decimal numbers that captures its \"meaning\"."
+  },
+  "positional_encoding": {
+    "vulgarized": "Position signal",
+    "technicalFr": "positional encoding",
+    "definition": "Signal added to embeddings to indicate the position of each token in the sentence."
+  },
+  "attention": {
+    "vulgarized": "Attention mechanism",
+    "technicalFr": "multi-head attention",
+    "definition": "Allows the model to \"look at\" other words to understand the context of each one."
+  },
+  "seed": {
+    "vulgarized": "Random seed",
+    "technicalFr": "random seed",
+    "definition": "Initial number that determines the \"random\" values. Same seed = same results (reproducibility)."
+  }
+}

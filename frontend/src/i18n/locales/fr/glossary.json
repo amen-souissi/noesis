@@ -1,0 +1,152 @@
+{
+  "d_model": {
+    "vulgarized": "Dimensions du modèle",
+    "technicalFr": "dimension du modèle",
+    "definition": "Taille des vecteurs internes que le modèle utilise pour représenter chaque token. Plus c'est grand, plus le modèle peut capturer de nuances."
+  },
+  "n_heads": {
+    "vulgarized": "Têtes d'attention",
+    "technicalFr": "nombre de têtes d'attention",
+    "definition": "Nombre de \"perspectives\" parallèles que le modèle utilise pour analyser les relations entre les mots."
+  },
+  "n_layers": {
+    "vulgarized": "Couches du modèle",
+    "technicalFr": "nombre de couches",
+    "definition": "Nombre de blocs de traitement empilés. Chaque couche affine la compréhension du texte."
+  },
+  "d_ff": {
+    "vulgarized": "Taille de la couche cachée",
+    "technicalFr": "dimension feed-forward",
+    "definition": "Taille de la couche intermédiaire dans le réseau feed-forward. Généralement 4× la dimension du modèle."
+  },
+  "seq_len": {
+    "vulgarized": "Taille du contexte",
+    "technicalFr": "longueur de séquence",
+    "definition": "Nombre maximum de tokens que le modèle peut \"voir\" en même temps pour faire sa prédiction."
+  },
+  "vocab_size": {
+    "vulgarized": "Taille du vocabulaire",
+    "technicalFr": "taille du vocabulaire",
+    "definition": "Nombre total de tokens différents que le modèle connaît."
+  },
+  "learning_rate": {
+    "vulgarized": "Vitesse d'apprentissage",
+    "technicalFr": "taux d'apprentissage",
+    "definition": "Contrôle l'amplitude des corrections à chaque étape. Trop rapide = instable, trop lent = apprentissage long."
+  },
+  "epochs": {
+    "vulgarized": "Itérations d'entraînement",
+    "technicalFr": "époques",
+    "definition": "Nombre de passages complets sur toutes les données d'entraînement. Plus d'itérations = meilleure mémorisation."
+  },
+  "batch_size": {
+    "vulgarized": "Découpage en lots",
+    "technicalFr": "taille du lot",
+    "definition": "Nombre d'exemples traités simultanément avant de mettre à jour les poids. Un compromis entre vitesse et stabilité."
+  },
+  "grad_clip": {
+    "vulgarized": "Limite des corrections",
+    "technicalFr": "écrêtage de gradient",
+    "definition": "Empêche les corrections trop brutales qui pourraient déstabiliser le modèle."
+  },
+  "loss": {
+    "vulgarized": "Erreur du modèle",
+    "technicalFr": "fonction de perte",
+    "definition": "Mesure à quel point les prédictions du modèle sont éloignées de la réalité. L'objectif est de la réduire."
+  },
+  "backpropagation": {
+    "vulgarized": "Rétropropagation",
+    "technicalFr": "rétropropagation du gradient",
+    "definition": "Algorithme qui calcule, pour chaque poids, dans quelle direction le modifier pour réduire l'erreur."
+  },
+  "beta1": {
+    "vulgarized": "Élan",
+    "technicalFr": "coefficient de momentum",
+    "definition": "Contrôle l'inertie des mises à jour. Permet de \"lisser\" la trajectoire et d'éviter les oscillations."
+  },
+  "beta2": {
+    "vulgarized": "Adaptation de vitesse",
+    "technicalFr": "coefficient RMSprop",
+    "definition": "Permet d'adapter automatiquement la vitesse d'apprentissage pour chaque poids individuellement."
+  },
+  "epsilon": {
+    "vulgarized": "Stabilisateur",
+    "technicalFr": "epsilon",
+    "definition": "Petite valeur qui empêche la division par zéro dans le calcul de l'optimiseur."
+  },
+  "weight_decay": {
+    "vulgarized": "Régularisation des poids",
+    "technicalFr": "décroissance des poids",
+    "definition": "Force les poids à rester petits en les réduisant légèrement à chaque étape. Empêche la mémorisation et favorise la généralisation (grokking)."
+  },
+  "lr_schedule": {
+    "vulgarized": "Rythme d'apprentissage",
+    "technicalFr": "planification du taux d'apprentissage",
+    "definition": "Fait varier la vitesse d'apprentissage au cours de l'entraînement. Cosine annealing alterne entre phases intenses et calmes, favorisant le grokking."
+  },
+  "temperature": {
+    "vulgarized": "Créativité",
+    "technicalFr": "température",
+    "definition": "Contrôle la diversité des réponses. Basse = répétitif et sûr. Haute = créatif et surprenant."
+  },
+  "max_gen_len": {
+    "vulgarized": "Longueur maximale de réponse",
+    "technicalFr": "longueur max de génération",
+    "definition": "Nombre maximum de tokens que le modèle peut générer en une réponse."
+  },
+  "softmax": {
+    "vulgarized": "Conversion en probabilités",
+    "technicalFr": "fonction softmax",
+    "definition": "Transforme les scores bruts du modèle en probabilités (nombres entre 0 et 1 qui totalisent 1)."
+  },
+  "logits": {
+    "vulgarized": "Scores bruts",
+    "technicalFr": "logits",
+    "definition": "Scores numériques que le modèle attribue à chaque token possible avant de les convertir en probabilités."
+  },
+  "sampling": {
+    "vulgarized": "Tirage au sort pondéré",
+    "technicalFr": "échantillonnage",
+    "definition": "Le modèle choisit le prochain token en \"tirant au sort\" parmi les candidats, pondéré par leurs probabilités."
+  },
+  "autoregressive": {
+    "vulgarized": "Génération mot par mot",
+    "technicalFr": "génération autorégressive",
+    "definition": "Le modèle génère un token à la fois, puis l'ajoute au texte pour prédire le suivant, en boucle."
+  },
+  "bos_token": {
+    "vulgarized": "Début de phrase",
+    "technicalFr": "token de début de phrase",
+    "definition": "Token spécial ajouté automatiquement avant le prompt pour signaler au modèle le début d'une nouvelle phrase."
+  },
+  "eos_token": {
+    "vulgarized": "Fin de phrase",
+    "technicalFr": "token de fin de phrase",
+    "definition": "Token spécial que le modèle apprend à générer quand une phrase est complète. La génération s'arrête automatiquement."
+  },
+  "tokenizer": {
+    "vulgarized": "Découpeur de texte",
+    "technicalFr": "tokeniseur",
+    "definition": "Outil qui découpe le texte en unités (tokens) et attribue un numéro unique à chacune."
+  },
+  "embedding": {
+    "vulgarized": "Représentation vectorielle",
+    "technicalFr": "plongement",
+    "definition": "Transforme chaque token en un vecteur de nombres décimaux qui capture son \"sens\"."
+  },
+  "positional_encoding": {
+    "vulgarized": "Signal de position",
+    "technicalFr": "encodage positionnel",
+    "definition": "Signal ajouté aux embeddings pour indiquer la position de chaque token dans la phrase."
+  },
+  "attention": {
+    "vulgarized": "Mécanisme d'attention",
+    "technicalFr": "attention multi-têtes",
+    "definition": "Permet au modèle de \"regarder\" les autres mots pour comprendre le contexte de chacun."
+  },
+  "seed": {
+    "vulgarized": "Graine aléatoire",
+    "technicalFr": "graine aléatoire",
+    "definition": "Nombre initial qui détermine les valeurs \"aléatoires\". Même graine = mêmes résultats (reproductibilité)."
+  }
+}

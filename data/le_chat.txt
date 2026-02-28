@@ -1,0 +1,176 @@
+Le chat mange du poisson.
+Le chat dort sur le canape.
+Le chat joue avec la balle.
+Le chat ronronne doucement.
+Le chat grimpe sur le mur.
+Le chat observe les oiseaux.
+Le chat se cache sous le lit.
+Le chat boit du lait.
+Le chat court dans le jardin.
+Le chat attrape une souris.
+Le chat se lave les pattes.
+Le chat saute sur la table.
+Le chat miaule devant la porte.
+Le chat aime le soleil.
+Le chat dort toute la journee.
+Le chat mange des croquettes.
+Le chat regarde par la fenetre.
+Le chat joue avec un fil.
+Le chat se frotte contre la jambe.
+Le chat dort sur le coussin.
+Le chat chasse les papillons.
+Le chat griffe le canape.
+Le chat se roule en boule.
+Le chat mange de la viande.
+Le chat boit de l eau.
+Le chat saute sur le meuble.
+Le chat dort pres du radiateur.
+Le chat court apres la balle.
+Le chat se cache dans le placard.
+Le chat ronronne sur les genoux.
+Le chat dort dans le panier.
+Le chat joue dans le couloir.
+Le chat grimpe sur l arbre.
+Le chat mange du thon.
+Le chat dort sur le tapis.
+Le chat saute par la fenetre.
+Le chat miaule quand il a faim.
+Le chat se promene dans la maison.
+Le chat observe le jardin.
+Le chat joue avec la ficelle.
+Le chat dort sur le fauteuil.
+Le chat chasse les mouches.
+Le chat boit dans sa gamelle.
+Le chat ronronne le soir.
+Le chat dort au soleil.
+Le chat court dans la cuisine.
+Le chat attrape un insecte.
+Le chat mange le matin.
+Le chat dort la nuit.
+Le chat joue le soir.
+Le chien mange la viande.
+Le chien dort dans le jardin.
+Le chien court dans le parc.
+Le chien remue la queue.
+Le chien aboie fort.
+Le chien joue avec un baton.
+Le chien attend devant la porte.
+Le chien protege la maison.
+Le chien mange des croquettes.
+Le chien boit de l eau.
+Le chien dort sur le tapis.
+Le chien est fidele et gentil.
+Le chien court apres la balle.
+Le chien saute sur son maitre.
+Le chien aime les promenades.
+Le chien dort dans sa niche.
+Le chien garde le jardin.
+Le chien ronge un os.
+Le chien rapporte la balle.
+Le chien aboie quand il a peur.
+Le chien mange le matin et le soir.
+Le chien dort pres de la cheminee.
+Le chien joue dans la cour.
+Le chien leve la patte.
+Le chien est un animal fidele.
+L oiseau chante le matin.
+L oiseau vole dans le ciel.
+L oiseau fait son nid dans l arbre.
+L oiseau mange des graines.
+L oiseau picore dans le jardin.
+L oiseau se pose sur la branche.
+L oiseau boit dans la fontaine.
+L oiseau chante au lever du soleil.
+L oiseau a des plumes colorees.
+L oiseau survole la maison.
+Le poisson nage dans le lac.
+Le poisson mange des algues.
+Le poisson saute hors de l eau.
+Le poisson vit dans la riviere.
+Le poisson est rapide et agile.
+Le lapin mange des carottes.
+Le lapin court dans le champ.
+Le lapin se cache dans son terrier.
+Le lapin a de longues oreilles.
+Le lapin saute dans le pre.
+La souris mange du fromage.
+La souris court dans la cuisine.
+La souris se cache dans un trou.
+La souris a peur du chat.
+La souris grignote du pain.
+Le soleil brille dans le ciel.
+Le soleil se leve le matin.
+Le soleil se couche le soir.
+Le soleil rechauffe la terre.
+Le soleil eclaire la maison.
+La lune brille dans la nuit.
+La lune est ronde et blanche.
+La lune eclaire le jardin.
+La lune se reflete dans le lac.
+La lune apparait le soir.
+Le vent souffle dans les arbres.
+Le vent fait bouger les feuilles.
+Le vent est fort aujourd hui.
+Le vent souffle sur la mer.
+Le vent chasse les nuages.
+La pluie tombe sur le toit.
+La pluie mouille le jardin.
+La pluie fait pousser les fleurs.
+La pluie est douce et legere.
+La pluie arrose les plantes.
+L enfant joue dans le jardin.
+L enfant mange une pomme.
+L enfant dort dans son lit.
+L enfant court dans la maison.
+L enfant lit un livre.
+L enfant dessine un chat.
+L enfant aime les animaux.
+L enfant regarde les etoiles.
+L enfant chante une chanson.
+L enfant se promene dans le parc.
+La maison est grande et belle.
+La maison a un jardin.
+La maison est pres de la riviere.
+La maison a une porte rouge.
+La maison est calme le soir.
+Le jardin est plein de fleurs.
+Le jardin a un grand arbre.
+Le jardin est vert en ete.
+Le jardin est beau au printemps.
+Le jardin attire les papillons.
+La mer est bleue et calme.
+La mer brille sous le soleil.
+La mer est grande et profonde.
+La mer fait un bruit doux.
+La mer se retire le soir.
+La montagne est haute et blanche.
+La montagne touche les nuages.
+La montagne est belle en hiver.
+La montagne domine la vallee.
+La montagne est couverte de neige.
+La foret est sombre et calme.
+La foret abrite les animaux.
+La foret a de grands arbres.
+La foret est verte en ete.
+La foret est belle en automne.
+Le chat et le chien jouent ensemble.
+Le chat regarde le poisson nager.
+Le chien court apres le chat.
+La souris a peur du chat et du chien.
+L oiseau chante et le chat ecoute.
+L enfant joue avec le chat.
+L enfant promene le chien dans le parc.
+Le chat dort et le chien garde la maison.
+Le soleil brille et les oiseaux chantent.
+La pluie tombe et le chat se cache.
+Le chat est curieux et intelligent.
+Le chien est loyal et courageux.
+L oiseau est libre et joyeux.
+Le poisson est calme et silencieux.
+Le lapin est rapide et malin.
+La souris est petite et discrete.
+Le chat noir dort sur le coussin bleu.
+Le petit chien court dans le grand jardin.
+Le vieux chat observe les jeunes oiseaux.
+La petite souris grignote le gros fromage.
+Le bel oiseau chante une douce melodie.

@@ -1,0 +1,524 @@
+{
+  "educational": {
+    "phaseHeader": {
+      "trainingTitle": "Training Pipeline",
+      "trainingDesc": "How the model learns from text",
+      "generationTitle": "Generation Pipeline",
+      "generationDesc": "How the model produces text"
+    },
+    "stepExplainer": {
+      "stepOf": "Step {{stepNumber}} of {{totalSteps}}",
+      "interactiveViz": "Interactive visualization"
+    },
+    "concreteCalculation": {
+      "prefix": "Concrete calculation: {{title}}"
+    },
+    "vulgarizedTerm": {
+      "fullDocumentation": "Full documentation"
+    },
+    "exampleSentenceBanner": {
+      "label": "Our running example:"
+    },
+    "stepNavigation": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "moduleDocLink": {
+      "defaultLabel": "Full technical documentation"
+    },
+    "deepDiveSection": {
+      "defaultTitle": "Deep dive",
+      "fullDocLink": "View full technical documentation"
+    }
+  },
+  "visualizations": {
+    "architectureDiagram": {
+      "blocks": {
+        "tokenizer": {
+          "label": "Tokenization",
+          "sublabel": "Text → Numbers"
+        },
+        "embedding": {
+          "label": "Embedding",
+          "sublabel": "Numbers → Vectors"
+        },
+        "positional": {
+          "label": "Positional Encoding",
+          "sublabel": "Adding position"
+        },
+        "attention": {
+          "label": "Attention",
+          "sublabel": "Understanding context"
+        },
+        "ffn": {
+          "label": "Feed-Forward",
+          "sublabel": "Processing info"
+        },
+        "output": {
+          "label": "Output Layer",
+          "sublabel": "Vectors → Scores"
+        },
+        "loss": {
+          "label": "Loss Computation",
+          "sublabel": "Measuring progress"
+        },
+        "backprop": {
+          "label": "Backpropagation",
+          "sublabel": "Computing corrections"
+        },
+        "optimizer": {
+          "label": "Optimizer",
+          "sublabel": "Updating weights"
+        }
+      },
+      "groupLabels": {
+        "input": "Input",
+        "process": "Processing (x n_layers)",
+        "output": "Output & Training"
+      }
+    },
+    "ffnDiagram": {
+      "inputLayer": "Input",
+      "hiddenLayer": "Hidden layer",
+      "outputLayer": "Output",
+      "expansion": "x {{factor}} expansion",
+      "compression": "/ {{factor}} compression"
+    },
+    "optimizerViz": {
+      "paramLabel": "Parameter: {{paramName}}",
+      "steps": {
+        "currentWeight": "Current weight",
+        "gradient": "Gradient",
+        "momentum": "Momentum (m)",
+        "adaptiveSpeed": "Adaptive speed (v)",
+        "correction": "Correction",
+        "newWeight": "New weight"
+      },
+      "formula": "new_weight = weight - lr x corrected_momentum / (sqrt(corrected_speed) + e)"
+    },
+    "attentionDetailedCalculation": {
+      "step0": {
+        "title": "Step 0: Our sentence and its input vectors",
+        "description": "Before any computation, let's look at the input data: each character of \"The cat\" has an embedding vector (here simplified to 4 dimensions instead of 64).",
+        "phraseLabel": "Sentence:",
+        "tokenTitle": "Token {{idx}}: \"{{token}}\" (ID {{id}})",
+        "clickInstruction": "Click on a token to follow it through the calculations below.",
+        "matrixTitle": "Embedding matrix E",
+        "rowExplanation": "Each row = a token's vector (embedding + positional encoding). Simplified to 4 dimensions for readability (the actual model uses 64)."
+      },
+      "step1": {
+        "title": "Step 1: The projection matrices (one head)",
+        "description": "Each attention head has 3 learned matrices. Here are those for head 1:",
+        "projQuery": "-> \"Query\" projection",
+        "projKey": "-> \"Key\" projection",
+        "projValue": "-> \"Value\" projection",
+        "learnedParams": "These matrices are learned parameters.",
+        "learnedParamsDetail": "At the start of training, they are randomly initialized. Backpropagation adjusts them to minimize the prediction error.",
+        "realSize": "Actual size: 64 x 16 per head (d_model x d_k). Here simplified to 4 x 4."
+      },
+      "step2": {
+        "title": "Step 2: Project each token -> Q, K, V",
+        "description": "Each token multiplies its embedding by the 3 matrices. Let's see the detailed calculation for \"{{token}}\" (selected token), then the result for all tokens.",
+        "calcQTitle": "Computing Q for \"{{token}}\":",
+        "dimensionDetail": "Dimension {{dim}} -> dot product of row {{dim}} of W_Q x E_{{token}}:",
+        "sameCalcNote": "The same calculation is done with W_K to get K_{{token}} and with W_V to get V_{{token}}."
+      },
+      "step3": {
+        "title": "Step 3: Compute alignment scores (Q . K^T / sqrt(d_k))",
+        "description": "For each pair of tokens, we compute a dot product between one's Q projection and the other's K. Let's see the calculation for \"{{token}}\" looking at each token.",
+        "scoresTitle": "Scores from \"{{token}}\" to each visible token",
+        "highScore": "<- high",
+        "negativeScore": "<- negative",
+        "matrixTitle": "Score matrix Q . K^T / sqrt(d_k)",
+        "maskedExplanation": "The \"-\" entries are masked positions (future tokens). The causal mask sets these scores to -infinity before softmax."
+      },
+      "step4": {
+        "title": "Step 4: Softmax -> attention weights",
+        "description": "Softmax transforms each row's scores into weights between 0 and 1 (summing to 1). Masked positions receive a weight of 0.",
+        "softmaxTitle": "Softmax for \"{{token}}\"",
+        "applyExp": "1. Apply exp() to each score:",
+        "sum": "2. Sum:",
+        "divideBySum": "3. Divide each exp by the sum:",
+        "weightsMatrixTitle": "Attention weights (after softmax + causal mask)",
+        "rowSumsToOne": "Each row sums to 1. Higher weights indicate stronger influence.",
+        "tokenLooksMostly": "Token \"{{token}}\" mostly attends to \"{{targetToken}}\" ({{percentage}}%)."
+      },
+      "step5": {
+        "title": "Step 5: Mix V projections with the weights",
+        "description": "Each token's output is the weighted sum of V vectors. Let's see the calculation for \"{{token}}\".",
+        "outputTitle": "Output for \"{{token}}\" = Sum(weights x V)",
+        "weightsLabel": "Weights of \"{{token}}\"",
+        "resultNote": "This vector integrates information from all visible tokens, weighted by the attention weights."
+      },
+      "step6": {
+        "title": "Result: the complete output matrix",
+        "description": "Each token now has a new vector that integrates context. Here is the complete output of this attention head:",
+        "outputMatrixTitle": "Output = Weights x V",
+        "beforeAfterTitle": "Before / after for \"{{token}}\"",
+        "inputLabel": "Input:",
+        "outputLabel": "Output:",
+        "isolatedEmbedding": "<- isolated embedding",
+        "withContext": "<- with context ({{details}})",
+        "singleHeadNote": "This was the result of a single attention head. The next step shows how the 4 heads are combined."
+      },
+      "step7": {
+        "title": "Step 7: Combining the 4 attention heads",
+        "description": "Each head looks at the context from a different angle. Their outputs are concatenated then projected by W_O to produce the final representation.",
+        "headOutputsTitle": "Outputs of the 4 heads",
+        "eachSize": "(each {{rows}}x{{cols}})",
+        "headLabel": "Head {{headNumber}}",
+        "headLabelCalculated": "Head {{headNumber}} (computed above)",
+        "sameCalcDiffWeights": "Same calculation, different W matrices",
+        "concatenationTitle": "Concatenation: [{{rows}}x{{cols}}] x {{nHeads}} -> [{{rows}}x{{totalCols}}]",
+        "colorExplanation": "Each block of {{dim}} columns comes from a different head (color). The row for \"{{token}}\" is highlighted.",
+        "projWOTitle": "Projection W_O: concat x W_O -> final output",
+        "projWODescription": "W_O (Output) is the output projection matrix ({{inDim}}x{{outDim}}). Like W_Q, W_K and W_V, its values are learned weights during training -- randomly initialized then adjusted by gradient descent. It recombines the results of the {{nHeads}} heads into a single vector of the original size ({{outDim}} dimensions), allowing the model to learn how to mix each head's perspectives.",
+        "projectionForToken": "Projection for \"{{token}}\": contribution of each head",
+        "partialTotal": "Partial total: [{{values}}]",
+        "finalRepresentation": "This vector is the final representation of \"{{token}}\" after multi-head attention. It integrates the perspectives of 4 different heads, combined by W_O.",
+        "beforeAfterTitle": "Before / after for \"{{token}}\"",
+        "embeddingLabel": "Embedding:",
+        "singleHeadLabel": "1 head:",
+        "multiHeadLabel": "4 heads + W_O:",
+        "isolatedNoContext": "<- isolated, no context",
+        "afterSingleHead": "<- after attention (head 1 only)",
+        "enrichedFinalRepr": "<- enriched final representation",
+        "finalVectorNote": "The final vector combines the analyses of 4 independent heads. Each head captures a different type of relationship (position, syntax, semantics...).",
+        "outputMatrixTitle": "Final multi-head output"
+      }
+    },
+    "gradientFlow": {
+      "modules": {
+        "loss": "Loss",
+        "output": "Output",
+        "layerNorm": "LayerNorm",
+        "block2": "Block 2",
+        "block1": "Block 1",
+        "posEnc": "Pos. Enc.",
+        "embedding": "Embedding"
+      },
+      "gradientDirection": "<- Gradients (backpropagation)",
+      "forwardDirection": "Data (forward) ->",
+      "activeDescription": "The gradient flows through {{module}} -- each layer computes its contribution to the error"
+    },
+    "tokenGrid": {
+      "vocabDictionary": "Vocabulary dictionary ({{count}} tokens):",
+      "hoverInfo": "Token \"{{token}}\" appears {{count}} times -- ID: {{id}}"
+    },
+    "softmaxBar": {
+      "temperatureLabel": "Temperature (creativity):",
+      "veryFocused": "Very focused -- the model almost always picks the most likely token.",
+      "balanced": "Balanced -- a good trade-off between predictability and diversity.",
+      "veryCreative": "Very creative -- less likely tokens have a higher chance of being chosen.",
+      "rawScores": "Raw scores (logits)",
+      "probabilities": "Probabilities (after softmax T={{temp}})",
+      "probabilityTooltip": "Probability"
+    },
+    "embeddingMatrix": {
+      "fullMatrix": "Full matrix: {{rows}} x {{cols}}",
+      "displayFirstDims": "Showing: {{count}} tokens x first {{dims}} dimensions",
+      "displayAllDims": "Showing: {{count}} tokens x {{dims}} dimensions",
+      "tokenHeader": "Token",
+      "negativeValues": "Negative values",
+      "nearZero": "Near zero",
+      "positiveValues": "Positive values"
+    },
+    "lossComparison": {
+      "modelSees": "The model sees:",
+      "mustPredict": "and must predict:",
+      "errorLoss": "Error (Loss):",
+      "probabilityTooltip": "Probability"
+    },
+    "positionalWaves": {
+      "dimensionLabel": "Dimension {{dim}}",
+      "positionLabel": "Position",
+      "tooltipWithToken": "Position {{pos}} -- \"{{token}}\"",
+      "tooltipWithoutToken": "Position {{pos}}"
+    },
+    "matrixDisplay": {},
+    "animatedMathOperation": {
+      "previousStep": "Previous step",
+      "pause": "Pause",
+      "animate": "Animate",
+      "resume": "Resume",
+      "nextStep": "Next step",
+      "restart": "Restart"
+    },
+    "attentionHeatmap": {
+      "looksAt": "looks at →",
+      "space": "space",
+      "hoverInfo": "\"{{source}}\" looks at \"{{target}}\" with a weight of {{weight}}",
+      "maskedZone": "Masked zone — the token cannot see future tokens (causal mask)"
+    },
+    "autoregressiveLoop": {
+      "pause": "Pause",
+      "start": "Start",
+      "resume": "Resume",
+      "nextStep": "Next step",
+      "restart": "Restart",
+      "stepCounter": "Step {{current}} / {{total}}",
+      "contextLabel": "Context seen by the model",
+      "predictedToken": "Predicted token",
+      "spaceToken": "⎵ (space)",
+      "confidence": "Confidence"
+    },
+    "positionalTable": {
+      "posHeader": "Pos",
+      "charHeader": "Char",
+      "sinusTitle": "Sine — dimension {{dim}}",
+      "cosinusTitle": "Cosine — dimension {{dim}}",
+      "uniqueHeader": "Unique?",
+      "positive": "Positive",
+      "negative": "Negative",
+      "zero": "Zero",
+      "hoverTitle": "Position {{pos}}",
+      "hoverDescription": "the token \"{{token}}\" receives this unique vector of {{count}} values.",
+      "hoverDetail": "This vector is <strong>always the same</strong> for position {{pos}}, regardless of the token. It's a fixed signal that tells the model: \"I am at position {{pos}}\"."
+    }
+  },
+  "playground": {
+    "config": {
+      "educationalTip": "Hover over parameter names to see their scientific term and an explanation.",
+      "applyPreset": "Apply a preset:",
+      "tokenizerLabel": "Tokenizer",
+      "seeLesson": "See the lesson: {{lesson}}",
+      "lessonLabels": {
+        "embedding": "Embedding",
+        "attention": "Attention",
+        "feedForward": "Feed-Forward Network",
+        "positionalEncoding": "Positional Encoding",
+        "lossCalculation": "Loss Calculation",
+        "optimizer": "Optimizer",
+        "backpropagation": "Backpropagation",
+        "softmaxTemperature": "Probabilities and Temperature",
+        "autoregressiveLoop": "Autoregressive Loop"
+      },
+      "tokenizerOptions": {
+        "character": "Character by character",
+        "gpt4": "BPE style GPT-4 (cl100k_base)",
+        "claude": "BPE style Claude (o200k_base)"
+      },
+      "bpeInfo": "Uses BPE (subword) splitting instead of characters. The vocabulary is built from your training corpus.",
+      "categories": {
+        "architecture": "Model architecture",
+        "training": "Training",
+        "optimizer": "Optimizer",
+        "generation": "Generation"
+      },
+      "lrScheduleOptions": {
+        "constant": "Constant",
+        "cosine": "Cosine Annealing",
+        "cosineRestarts": "Cosine with restarts"
+      },
+      "validationError": "Validation error",
+      "configValid": "Configuration valid",
+      "errorsLabel": "Errors:",
+      "reinitWarning": "The architecture or tokenizer has changed. Click \"Re-initialize\" in the status bar to apply the changes.",
+      "saved": "Saved!",
+      "save": "Save",
+      "validate": "Validate"
+    },
+    "explorer": {
+      "title": "Model Explorer",
+      "modelNotLoaded": "The model is not yet loaded in memory. Use the \"Initialize\" button in the status bar at the top of the page.",
+      "tabs": {
+        "weights": "Model weights",
+        "generation": "Generation",
+        "tokens": "Tokenization",
+        "embeddings": "Embedding matrix"
+      },
+      "lessonLabels": {
+        "weights": "Lesson: Attention",
+        "generation": "Lesson: Autoregressive loop",
+        "tokens": "Lesson: Tokenization",
+        "embeddings": "Lesson: Embedding"
+      },
+      "tokenisation": {
+        "description": "Type some text to see how the tokenizer splits it into numerical tokens. Out-of-vocabulary tokens are ignored.",
+        "placeholder": "Type text here...",
+        "loading": "Tokenizing...",
+        "tokenizationError": "Tokenization error",
+        "tokenizerLabel": "Tokenizer:",
+        "vocabLabel": "Vocabulary: {{count}} tokens",
+        "resultLabel": "Result: {{count}} token",
+        "resultLabelPlural": "Result: {{count}} tokens",
+        "subwordsBPE": "subwords (BPE)"
+      },
+      "embedding": {
+        "description": "The embedding matrix transforms each token into a vector of numbers. The values evolve during training to capture the meaning of tokens.",
+        "loading": "Loading embeddings...",
+        "loadError": "Unable to load embeddings",
+        "noData": "No embedding data available."
+      },
+      "generation": {
+        "description": "Enter the beginning of a sentence and watch how the model predicts the next tokens, one by one. For each generated token, you can see the probability distribution of candidates.",
+        "placeholder": "Enter the beginning of a sentence...",
+        "generate": "Generate",
+        "generationError": "Error during generation. Is the model loaded?",
+        "generatedText": "Generated text",
+        "showAll": "Show all",
+        "tokenLabel": "Token #{{idx}}:",
+        "candidatesDistribution": "Candidates distribution:",
+        "tokensMax": "Max tokens",
+        "temperature": "Temperature",
+        "speed": "Speed",
+        "promptTokens": "{{count}} prompt tokens",
+        "generatedTokens": "{{count}} generated tokens",
+        "temperatureLabel": "temperature {{value}}"
+      },
+      "weights": {
+        "description": "Each module contains weight matrices adjusted during training. Click on a matrix to see the details.",
+        "matricesCount": "{{count}} matrices",
+        "parametersCount": "{{count}} parameters",
+        "negative": "- Negative",
+        "positive": "Positive +",
+        "lessonLabel": "Lesson: {{label}}",
+        "paramsAndMatrices": "{{params}} params . {{count}} matrix",
+        "paramsAndMatricesPlural": "{{params}} params . {{count}} matrices",
+        "weightsCount": "{{count}} weights",
+        "statsMin": "Min",
+        "statsMax": "Max",
+        "statsMean": "Mean",
+        "statsStd": "Std dev",
+        "noMatrices": "No weight matrices available.",
+        "loadError": "Unable to load matrices",
+        "loading": "Loading weights...",
+        "errorLabel": "Error computation"
+      }
+    },
+    "data": {
+      "educationalContext": "Training data is the \"book\" that the model will read and memorize. Upload text files, then enable/disable the ones this instance should use.",
+      "loadError": "Unable to load data",
+      "toggleError": "Error while toggling state",
+      "uploadError": "Error during upload",
+      "sampleError": "Error while loading sample data",
+      "loadSampleButton": "Load sample data (simple sentences)",
+      "dragDropText": "Drag a text file here or click to browse",
+      "fileTypes": ".txt, .json, .csv, .jsonl",
+      "noFiles": "No training files for this instance.",
+      "noFilesHint": "Upload text or load the sample data.",
+      "characters": "characters",
+      "disableForTraining": "Disable for training",
+      "enableForTraining": "Enable for training",
+      "removeFromInstance": "Remove from this instance",
+      "activeCorpus": "Active corpus",
+      "activeFiles": "Active files",
+      "charactersLabel": "Characters",
+      "uniqueChars": "Unique characters",
+      "vocabSize": "= vocabulary size",
+      "hidePreview": "Hide preview",
+      "showCorpus": "View corpus",
+      "noActiveData": "No active data. Enable files for training."
+    },
+    "training": {
+      "educationalContext": "Training is the process where the model \"reads\" your data and adjusts its internal weights to predict the next token.",
+      "iterationsLabel": "Iterations",
+      "continueLabel": "Continue",
+      "starting": "Starting...",
+      "start": "Start",
+      "startError": "Error at startup",
+      "stopError": "Error while stopping",
+      "pauseError": "Error while pausing",
+      "resumeError": "Error while resuming",
+      "resume": "Resume",
+      "stopButton": "Stop",
+      "running": "Running",
+      "paused": "Paused",
+      "lossCurveTitle": "Loss curve",
+      "lossCurveDesc": "The curve should go down: the model is making fewer and fewer prediction errors.",
+      "stepTooltip": "Step {{step}}",
+      "historyTitle": "Training history",
+      "noHistory": "No past training runs.",
+      "epochsLabel": "{{current}}/{{total}} epochs",
+      "finalLoss": "Final loss: {{value}}",
+      "statusCompleted": "Completed",
+      "statusFailed": "Failed",
+      "statusStopped": "Stopped",
+      "statusRunning": "Running"
+    },
+    "instanceList": {
+      "title": "Playground",
+      "subtitle": "Create and train your own mini-LLMs",
+      "educationalContext": "Each instance is an independent mini-LLM with its own configuration, data, and training history. Create multiple instances to compare different architectures and hyperparameters.",
+      "statusLabels": {
+        "idle": "Idle",
+        "ready": "Ready",
+        "training": "Training",
+        "paused": "Paused"
+      },
+      "tokenizerLabels": {
+        "character": "Character",
+        "gpt4": "GPT-4 (BPE)",
+        "claude": "Claude (BPE)"
+      },
+      "layers": "{{count}} layers",
+      "parameters": "{{count}}k parameters",
+      "deleteInstance": "Delete instance",
+      "deleteLabel": "Delete {{name}}",
+      "noInstances": "No LLM instances",
+      "noInstancesHint": "Create your first mini-LLM to start exploring.",
+      "instanceNameLabel": "Instance name",
+      "namePlaceholder": "My first LLM",
+      "create": "Create",
+      "cancel": "Cancel",
+      "newInstance": "New LLM instance",
+      "networkError": "Network error",
+      "createError": "Error during creation"
+    },
+    "modelSwitcher": {
+      "selectModel": "Select a model",
+      "chooseModel": "-- Choose a model --",
+      "unloadTitle": "Unload model from memory",
+      "unloadLabel": "Unload model"
+    },
+    "trainingMonitor": {
+      "continueTraining": "Continue training while keeping current weights"
+    },
+    "chat": {
+      "explainerTitle": "How the model responds:",
+      "explainerText": "When you send a message, the model uses the autoregressive loop -- it predicts a token, appends it to the text, and repeats.",
+      "temperatureControl": "Creativity controls the diversity of responses.",
+      "close": "Close",
+      "newConversation": "New conversation",
+      "session": "Session",
+      "noSession": "No session",
+      "settings": "Settings",
+      "strategyLabel": "Strategy",
+      "seeLesson": "See the lesson: Sampling",
+      "strategyOptions": {
+        "greedy": "Greedy",
+        "temperature": "Temperature",
+        "topK": "Top-K",
+        "topP": "Top-P (nucleus)"
+      },
+      "creativityLabel": "Creativity",
+      "predictable": "Predictable",
+      "balanced": "Balanced",
+      "creative": "Creative",
+      "topKRestricted": "Restricted",
+      "topKModerate": "Moderate",
+      "topKLarge": "Large",
+      "topPRestricted": "Restricted",
+      "topPModerate": "Moderate",
+      "topPLarge": "Large",
+      "maxLength": "Max length",
+      "minLength": "Min length",
+      "minLengthFree": "Free",
+      "minLengthChars": ">= {{count}} chars",
+      "emptyMessage": "Send a message to start chatting with the model.",
+      "emptyHint": "Try words that appear in your training data.",
+      "inputPlaceholder": "Write your message...",
+      "generationError": "Generation error. Make sure the model is trained."
+    }
+  },
+  "layout": {
+    "sidebar": {
+      "appName": "Noesis",
+      "appSubtitle": "Learn about LLMs",
+      "logout": "Log out"
+    },
+    "progress": {
+      "label": "Progress"
+    }
+  }
+}

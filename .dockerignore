@@ -1,0 +1,40 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+.venv
+venv
+env
+*.egg-info
+.pytest_cache
+.mypy_cache
+
+# Node
+node_modules
+frontend/node_modules
+
+# Build outputs
+frontend/dist
+*.log
+
+# IDE
+.idea
+.vscode
+
+# OS
+.DS_Store
+
+# Data & models (optional - exclude if not needed for build)
+# saved_models
+# db.sqlite3
+
+# Documentation (not needed for runtime)
+*.md
+!README.md
+
+# Tests (optional - include if needed)
+# tests

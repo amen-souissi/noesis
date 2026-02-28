@@ -1,0 +1,56 @@
+{
+  "app": {
+    "name": "Noesis",
+    "tagline": "Apprendre les LLM",
+    "footer": "NumPy-only Transformer — from scratch"
+  },
+  "nav": {
+    "progression": "Progression",
+    "logout": "Se déconnecter"
+  },
+  "actions": {
+    "start": "Commencer",
+    "startNow": "Commencer maintenant",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "close": "Fermer",
+    "reset": "Réinitialiser",
+    "loading": "Chargement…",
+    "retry": "Réessayer",
+    "send": "Envoyer",
+    "copy": "Copier",
+    "download": "Télécharger",
+    "upload": "Uploader",
+    "initialize": "Initialiser",
+    "train": "Entraîner",
+    "stop": "Arrêter",
+    "pause": "Pause",
+    "resume": "Reprendre",
+    "apply": "Appliquer",
+    "explore": "Explorer"
+  },
+  "status": {
+    "inactive": "Inactif",
+    "ready": "Prêt",
+    "training": "Entraînement",
+    "paused": "En pause",
+    "completed": "Terminé",
+    "failed": "Échoué",
+    "stopped": "Arrêté",
+    "active": "Actif"
+  },
+  "errors": {
+    "generic": "Une erreur est survenue",
+    "network": "Erreur réseau",
+    "notFound": "Non trouvé",
+    "stateChange": "Erreur lors du changement d'état"
+  },
+  "language": {
+    "label": "Langue",
+    "fr": "Français",
+    "en": "English"
+  }
+}

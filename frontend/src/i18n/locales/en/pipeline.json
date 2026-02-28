@@ -1,0 +1,101 @@
+{
+  "groups": {
+    "discover": "DISCOVER",
+    "math": "MATH REFRESHER",
+    "training": "TRAINING",
+    "generation": "GENERATION",
+    "deeper": "GO DEEPER",
+    "practice": "PRACTICE",
+    "reference": "REFERENCE"
+  },
+  "sections": {
+    "introduction": {
+      "title": "Introduction",
+      "subtitle": "What is an LLM?"
+    },
+    "math/vectors-matrices": {
+      "title": "Vectors & Matrices",
+      "subtitle": "The building blocks"
+    },
+    "math/matrix-product": {
+      "title": "Matrix Product",
+      "subtitle": "Combining dimensions"
+    },
+    "math/special-functions": {
+      "title": "Special Functions",
+      "subtitle": "exp, softmax, log"
+    },
+    "math/derivatives": {
+      "title": "Derivatives & Gradients",
+      "subtitle": "Measuring change"
+    },
+    "training/tokenization": {
+      "title": "Tokenization",
+      "subtitle": "From text to numbers"
+    },
+    "training/embedding": {
+      "title": "Embedding",
+      "subtitle": "From numbers to vectors"
+    },
+    "training/positional-encoding": {
+      "title": "Positional Encoding",
+      "subtitle": "Word order"
+    },
+    "training/attention": {
+      "title": "Attention",
+      "subtitle": "Understanding context"
+    },
+    "training/feedforward": {
+      "title": "Feed-Forward Network",
+      "subtitle": "Processing information"
+    },
+    "training/loss": {
+      "title": "Error Calculation",
+      "subtitle": "Measuring progress"
+    },
+    "training/backpropagation": {
+      "title": "Backpropagation",
+      "subtitle": "Correcting errors"
+    },
+    "training/optimizer": {
+      "title": "Optimizer",
+      "subtitle": "Updating weights"
+    },
+    "training/recap": {
+      "title": "Summary",
+      "subtitle": "The complete pipeline"
+    },
+    "generation/prompt": {
+      "title": "Prompt Tokenization",
+      "subtitle": "User input"
+    },
+    "generation/forward-pass": {
+      "title": "Model Forward Pass",
+      "subtitle": "The full computation"
+    },
+    "generation/softmax": {
+      "title": "Probabilities and Temperature",
+      "subtitle": "From scores to choices"
+    },
+    "generation/sampling": {
+      "title": "Sampling",
+      "subtitle": "Choosing the next token"
+    },
+    "generation/autoregressive": {
+      "title": "Autoregressive Loop",
+      "subtitle": "Generating word by word"
+    },
+    "deeper/beyond": {
+      "title": "Beyond Statistics",
+      "subtitle": "What the weights really encode"
+    },
+    "playground": {
+      "title": "Playground",
+      "subtitle": "Configure, train, chat"
+    },
+    "docs": {
+      "title": "Technical Documentation",
+      "subtitle": "Full reference"
+    }
+  }
+}
